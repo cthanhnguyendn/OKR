@@ -1,0 +1,457 @@
+/*
+ * Component: Button
+ * -----------------
+ */
+
+.btn {
+  @include border-radius($btn-border-radius,$btn-border-radius,$btn-border-radius,$btn-border-radius);
+  @include box-shadow($btn-boxshadow);
+  border: 1px solid transparent;
+  color: white;
+  background-color: $btn-color-normal;
+  min-width: 80px;
+  padding: 4px 9px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+
+  &.text-left{
+    text-align: left;
+  }
+
+  &.uppercase {
+    text-transform: uppercase
+  }
+
+  // Flat buttons
+  &.btn-flat {
+    @include border-radius(0,0,0,0);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+  }
+  &:hover,&:active,&:focus{
+    color: #ffffff;
+  }
+  // Active state
+  &:active {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // input file btn
+  &.btn-file {
+    position: relative;
+    overflow: hidden;
+    > input[type='file'] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      @include opacity(0);
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+    }
+  }
+  i{
+    margin-right: 5px;
+  }
+}
+
+//Button color variations
+.btn-default {
+  @extend %light-gradient;
+  color: $body-text-color;
+  border-color: $btn-default-border-color;
+  &:hover,
+  &:active,
+  &.hover,
+  &:focus{
+    @include transition(all $transition-speed $transition-fn);
+    background-color: darken(#f5f5f5, 2%);
+    border-color: darken($btn-default-border-color,2%);
+  }
+}
+// Quy add this style
+// It base on Lighting Design System
+//
+.btn-base{
+  color:$oss-blue;
+  border-color: $btn-default-border-color;
+  background-color:transparent !important;
+  // White background
+  &.has-white-bg{
+    background-color:#fff !important;
+  }
+  &:hover,
+  &:active,
+  &.hover,
+  &:focus{
+    @include transition(all $transition-speed $transition-fn);
+    background-color: darken(#f5f5f5, 2%);
+    border-color: darken($btn-default-border-color,2%);
+    color:$oss-blue;
+  }
+}
+
+.btn-primary {
+  background-color: $light-blue;
+  border-color: darken($light-blue, 5%);
+  &:hover, &:active, &.hover {
+    background-color: darken($light-blue, 5%);
+  }
+}
+
+.btn-success {
+  @extend %banana-gradient;
+  border-color: darken($oss-banana, 1%);
+  &:hover, &:active, &.hover,&:focus {
+    background-color: darken($oss-banana,2%);
+    border-color: darken($oss-banana,1%);
+    @include transition($transition-speed);
+  }
+}
+
+.btn-invisible{
+	border-color:transparent;
+	background-color:transparent;
+	color: $body-text-color;
+	&:hover,&:active{
+    	color:lighten($body-text-color,4%);
+		@include transition($transition-speed $transition-fn all);
+	}
+	&.btn-invisible--border{
+		&:hover,&:active{
+			border-color: $btn-default-border-color;
+		}
+	}
+}
+.btn-icon{
+  padding:5px 7px;
+  border:0px;
+  font-size:12px;
+  border-radius:3px;
+  &.transparent{
+    background: transparent;
+  }
+}
+// Dropdown Toggle
+.open .btn-default{
+  .dropdown-toggle{
+    @include transition(all $transition-speed $transition-fn);
+    background-color: darken(#f5f5f5, 2%);
+    border-color: darken($btn-default-border-color,2%);
+  }
+}
+.btn-info {
+  background-color: $aqua;
+  border-color: darken($aqua, 5%);
+  &:hover, &:active, &.hover {
+    background-color: darken($aqua, 5%);
+  }
+}
+
+.btn-danger {
+  background-color: $red;
+  border-color: darken($red, 5%);
+  &:hover, &:active, &.hover {
+    background-color: darken($red, 5%);
+  }
+}
+
+.btn-warning {
+  background-color: $yellow;
+  border-color: darken($yellow, 5%);
+  &:hover, &:active, &.hover {
+    background-color: darken($yellow, 5%);
+  }
+}
+
+.btn-outline {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  &:hover,
+  &:focus,
+  &:active {
+    color: rgba(255, 255, 255, .7);
+    border-color: rgba(255, 255, 255, .7);
+  }
+}
+
+.btn-link {
+  @include box-shadow(none);
+  // Quy modify, purposing is consistency design
+  color:$oss-blue;
+  &:hover,
+  &:active,
+  &.hover,
+  &:focus{
+    @include transition(all $transition-speed $transition-fn);
+    color:$oss-blue;
+  }
+}
+
+//General .btn with bg class
+.btn[class*='bg-']:hover {
+  @include box-shadow(inset 0 0 100px rgba(0, 0, 0, 0.2));
+}
+
+// Application buttons
+.btn-app {
+  @include border-radius(3px,3px,3px,3px);
+  position: relative;
+  padding: 15px 5px;
+  margin: 0 0 10px 10px;
+  min-width: 80px;
+  height: 60px;
+  text-align: center;
+  color: #666;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  font-size: 12px;
+  //Icons within the btn
+  > .fa, > .glyphicon, > .ion {
+    font-size: 20px;
+    display: block;
+  }
+
+  &:hover {
+    background: #f4f4f4;
+    color: #444;
+    border-color: #aaa;
+  }
+
+  &:active, &:focus {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  }
+
+  //The badge
+  > .badge {
+    position: absolute;
+    top: -3px;
+    right: -10px;
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+// The Special Button
+.c-the-special-btn{
+  @extend %clearfix;
+  margin-top: 30px;
+  margin-left: 20px;
+  height: 40px;
+  border-radius: 20px;
+  padding-left:20px;
+  padding-right:20px;
+  width: 160px;
+  text-align: left;
+  color:$oss-dark;
+  @extend %banana-gradient;
+  border-color: darken($oss-banana, 1%);
+  &:hover, &:active, &.hover{
+	color:lighten($oss-dark,2%);
+	@include gradient(lighten($oss-banana,2%),lighten($oss-banana,2%),lighten(#b6ce25,2%),"");
+	@include transition($transition-speed $transition-fn all);
+  }
+}
+// Input button
+.o-inputbtn{
+  float:left;
+  cursor:pointer;
+  position: relative;
+  width: 45px;height:45px;
+  font-size: 18px;
+  line-height: 45px;
+  text-align: center;
+  color: $body-icon-color;
+  display:table;
+  // Fontawesome icon
+  i.fa,a{
+    display:table-cell;
+    vertical-align: middle;
+    color: $body-icon-color;
+    cursor:pointer;
+  }
+  // If have a tag inside this elements - force align center
+  a{
+    padding-left:7px;
+    padding-right:7px;
+  }
+  &:hover{
+    background: lighten($oss-lightest,2%);
+    @include transition(0.25s);
+  }
+  input[type="file"]{
+    cursor: inherit;
+    opacity: 0;
+    position:absolute;
+    padding:0;
+    margin:0;
+    right:0;
+    top:0px;
+    height:45px;
+    width:45px;
+  }
+  // Small
+  &.o-inputbtn--small{
+    width:30px;height:30px;
+    font-size:16px;
+    line-height: 30px;
+        input[type="file"]{
+          height:30px;
+          width:30px;
+        }
+
+  }
+  // None hover
+  &.o-inputbtn--nohover{
+    &:hover{
+      background: transparent !important;
+    }
+  }
+  // Hover
+}
+// Ghost button
+.c-btn-ghost{
+  background-color: transparent;
+  border:1px solid $oss-lighter;
+  border-radius:3px;
+}
+.c-btn-ghost--hover-border{
+  background-color: transparent;
+  border-radius:3px;
+  &::hover{
+    border:1px solid
+  }
+}
+.c-btn-ghost--success{
+  background-color: transparent;
+  border:1px solid $oss-green;
+  color:$oss-green;
+  border-radius:3px;
+  font-weight:600;
+    &:hover{
+      color:$oss-green;
+    }
+    // Work on Announcement post in Newsfeed
+    &.is-clicked{
+      color:$oss-lighter;
+      border-color:$oss-lighter;
+      @include transition($transition-fn $transition-speed);
+      cursor: not-allowed;
+    }
+}
+// List view button
+// Using in filter list-view in datab table
+.c-list-view{
+  display:inline-block;
+  font-weight:300;
+  font-size:18px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  width:100%;
+  &.is-force-style{
+    background:transparent !important;
+    border:0px;
+    padding-left:0px;
+    box-shadow:none !important;
+    &:focus,&:active{
+      outline:0px !important;
+    }
+  }
+}
+//
+
+.btn-positive{
+  background-color: $btn-color-positive;
+  &:hover{
+    background-color: $btn-color-positive-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-positive-active;
+  }
+}
+.btn-add, .btn-accept, .btn-save {
+  background-color: $btn-color-add-save-accept;
+  &:hover{
+    background-color: $btn-color-add-save-accept-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-add-save-accept-active;
+  }
+}
+.btn-alert{
+  background-color: $btn-color-alert;
+  &:hover{
+    background-color: $btn-color-alert-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-alert-active;
+  }
+}
+.btn-post{
+  background-color: $btn-color-post;
+  &:hover{
+    background-color: $btn-color-post-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-post-active;
+  }
+}
+.btn-edit,.btn-copy{
+  background-color: $btn-color-edit-copy;
+  &:hover{
+    background-color: $btn-color-edit-copy-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-edit-copy-active;
+  }
+}
+.btn-cancel, .btn-close{
+  background-color: $btn-color-cancel-close;
+  &:hover{
+    background-color: $btn-color-cancel-close-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-cancel-close-active;
+  }
+}
+.btn-delete{
+  background-color: $btn-color-alert;
+  &:hover{
+    background-color: $btn-color-alert-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-alert-active;
+  }
+}
+.btn-back{
+  background-color: $btn-color-back;
+  &:hover{
+    background-color: $btn-color-back-hover;
+  }
+  &:active, &:focus{
+    background-color: $btn-color-back-active;
+  }
+}
+.btn-dropdown{
+  background-color:  #f5f5f5;
+  color: #455a64;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}

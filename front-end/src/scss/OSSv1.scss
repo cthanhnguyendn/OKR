@@ -1,0 +1,124 @@
+/*!
+ *   OSS FontEnd Style edited by THANHBEO
+ *   Author: ThanhBeo
+ *	 Website:
+ *   License:
+ *   Version:
+!*/
+//google fonts//
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+@import "./old/bootstrap/scss/bootstrap";
+@import "~font-awesome/scss/font-awesome";
+// //----
+@import "app-var";
+@import "variables";
+@import "core";
+@import "./old/scss/_mixins";
+@import "./mixins";
+@import "./old/scss/miscellaneous";
+// // OBJECT
+// // -----------
+@import "./old/scss/object";
+// // KEYFRAMES
+// // -----------
+// //COMPONENTS
+// //-----------
+//@import "./old/scss/components/header";
+//@import "../../css/build_scss/scss/components/sidebar";
+//@import "../../css/build_scss/scss/components/sidebar-mini";
+//@import "../../css/build_scss/scss/components/control-sidebar";
+@import "./old/scss/components/dropdown";
+//@import "./old/scss/components/forms";
+@import "./components/progress-bars";
+//@import "./old/scss/components/small-box";
+// @import "./old/scss/components/boxes";
+//@import "./old/scss/components/info-box";
+//@import "./old/scss/components/timeline";
+@import "./old/scss/components/vertical-timeline";
+//@import "./old/scss/components/buttons";
+//@import "./old/scss/components/callout";
+@import "./old/scss/components/alerts";
+@import "./old/scss/components/navs";
+@import "./old/scss/components/products";
+@import "./old/scss/components/table";
+@import "./old/scss/components/labels";
+@import "./old/scss/components/direct-chat";
+@import "./old/scss/components/users-list";
+@import "./old/scss/components/carousel";
+//@import "./old/scss/components/modal";
+@import "./old/scss/components/social-widgets";
+
+@import "components/oss-sidebar";
+@import "components/checkbox";
+@import "components/universal-component";
+@import "components/buttons";
+@import "components/forms";
+@import "components/modal";
+@import "components/control";
+@import "components/navs";
+@import "components/notifications";
+@import "components/datatables";
+@import "components/table";
+@import "components/date-time-picker";
+@import "components/tooltip";
+@import "components/boxes";
+@import "components/select2";
+@import "components/mail";
+@import "components/flex-box";
+// //MODULE
+// //------
+@import "./old/scss/pages/lockscreen";
+@import "./old/scss/pages/login_and_register";
+@import "./old/scss/pages/404_500_errors";
+//@import "pages/invoice";
+//@import "pages/profile";
+//@import "pages/docs";
+//@import "pages/contact";
+//@import "pages/timekeeping";
+//@import "pages/user-profile";
+//@import "pages/pos";
+// //Plugins
+// //--------
+//@import "plugins/bootstrap-social";
+//@import "plugins/fullcalendar";
+// //Miscellaneous
+// //-------------
+// @import "miscellaneous.less";
+//@import "print";
+//@import "skins/all-skins";
+//// Inport outside jquery plugin css
+//@import "./old/scss/plugins/webui-popover/jquery.webui-popover"; // Webui popover
+//@import "./old/scss/plugins/jstree/jstree"; //jstree
+//@import "../../css/build_scss/scss/plugins/select2/select2"; // select2
+//@import "plugins/bootstrap-table/bootstrap-table"; //bootstrap table by wenzhixin
+//@import "plugins/daterangepicker/daterangepicker-bs3"; //Daterangepicker
+//@import "plugins/daterangepicker/daterangepicker"; // Daterangepicker
+//@import "plugins/bootstrap-select/bootstrap-select"; // Bootstrap Select
+//@import "plugins/galleria/galleria.classic"; // Bootstrap Selec
+
+// Customize components - OSS
+//@import "./components/newsfeed";
+//@import "./components/new-feed";
+//@import "./old/scss/components/mail";
+//@import "./old/scss/components/preloader";
+@import "./old/scss/components/reset"; // Reset html object
+
+// Responsive
+//@import "responsive";
+//// Utilities
+@import  "./old/scss/utilities";
+//// Animate
+@import "./old/scss/animate";
+@import "./old/scss/custome/feedback";
+@import "./old/scss/custome/feedbackManager";
+@import "./old/scss/custome/react-select.min";
+@import "./old/scss/custome/datepicker";
+//@import "./old/scss/custome/image-gallery";
+@import "./old/scss/custome/react-datepicker.min";
+@import "./old/scss/custome/notify";
+@import "./old/scss/email/searchHeader";
+@import "./old/scss/email/telegramguide";
+
+@import "pages/document";
+@import "pages/home_page";
+@import "pages/leave";

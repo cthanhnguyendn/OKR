@@ -1,0 +1,72 @@
+[
+  {
+    "objectId":1,
+    "myOkr": true,
+    "name": "Workshop nội bộ giới thiệu về ứng dụng Oracle BI",
+    "progress": 15,
+    "owner":{
+      "name":"lộc",
+      "image":"http://oss.seedcom.vn/upload/2016/11/22/1479789058044.jpg"
+    },
+    "resultList":[
+      {
+        "resultId":1,
+        "name": "Tìm kiếm các tài liệu giàu thông tin về Oracle BI",
+        "progress": 15,
+        "owner":{
+          "name":"lộc",
+          "image":"http://oss.seedcom.vn/upload/2016/11/22/1479789058044.jpg"
+        }
+      },
+      {
+        "resultId":2,
+        "name": "Tạo bài thuyết trình trực quan bằng slideshow có nhiều đồ hoạ và ví dụ",
+        "progress": 0,
+        "owner":{
+          "name":"lộc",
+          "image":"http://oss.seedcom.vn/upload/2016/11/22/1479789058044.jpg"
+        }
+      }
+    ],
+    "parentObject":{},
+    "createdDate":45465121354
+  },
+  {
+    "objectId":2,
+    "name": "Ứng dụng OKR vào Seedcom để đạt hiệu cao hơn trong công việc",
+    "progress": 15,
+    "owner":{
+      "name":"lộc",
+      "image":"http://oss.seedcom.vn/upload/2016/11/22/1479789058044.jpg"
+    },
+    "resultList":[
+      {
+        "resultId":3,
+        "name": "Tạo công cụ hỗ trợ triển khai OKR",
+        "progress": 15,
+        "owner":{
+          "name":"lộc",
+          "image":"http://oss.seedcom.vn/upload/2016/11/22/1479789058044.jpg"
+        }
+      },{
+        "resultId":4,
+        "name": "Training OKR tới toàn thể các nhân viên trong công ty",
+        "progress": 0,
+        "owner":{
+          "name":"lộc",
+          "image":"http://oss.seedcom.vn/upload/2016/11/22/1479789058044.jpg"
+        }
+      }
+    ],
+    "parentObject":{
+      "objectId":3,
+      "name": "Quản lý hiệu quả quy trình làm việc",
+      "progress": 15,
+      "department": {
+        "departmentId":2,
+        "name":"Product"
+      }
+    },
+    "createdDate":45465121354
+  }
+]

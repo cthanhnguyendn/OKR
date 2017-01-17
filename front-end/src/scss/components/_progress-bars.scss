@@ -1,0 +1,216 @@
+/*
+ * Component: Progress Bar
+ * -----------------------
+ */
+
+//General CSS
+
+.progress,
+.progress > .progress-bar {
+  @include box-shadow(none);
+  height: 10px;
+  margin-bottom: 0px;
+  &, .progress-bar {
+    @include border-radius($progress-bar-border-radius,$progress-bar-border-radius,$progress-bar-border-radius,$progress-bar-border-radius);
+  }
+}
+
+/* size variation */
+.progress.sm,
+.progress-sm {
+  height: 10px;
+  &, .progress-bar {
+    @include border-radius($progress-bar-sm-border-radius,$progress-bar-sm-border-radius,$progress-bar-sm-border-radius,$progress-bar-sm-border-radius);
+  }
+}
+
+.progress.xs,
+.progress-xs {
+  height: 7px;
+  &, .progress-bar {
+    @include border-radius($progress-bar-xs-border-radius,$progress-bar-xs-border-radius,$progress-bar-xs-border-radius,$progress-bar-xs-border-radius);
+  }
+}
+
+.progress.xxs,
+.progress-xxs {
+  height: 3px;
+  &, .progress-bar {
+    @include border-radius($progress-bar-xs-border-radius,$progress-bar-xs-border-radius,$progress-bar-xs-border-radius,$progress-bar-xs-border-radius);
+  }
+}
+
+/* Vertical bars */
+.progress.vertical {
+  position: relative;
+  width: 30px;
+  height: 200px;
+  display: inline-block;
+  margin-right: 10px;
+  > .progress-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  //Sizes
+  &.sm,
+  &.progress-sm {
+    width: 20px;
+  }
+
+  &.xs,
+  &.progress-xs {
+    width: 10px;
+  }
+  &.xxs,
+  &.progress-xxs {
+    width: 3px;
+  }
+}
+
+//Progress Groups
+.progress-group {
+  .progress-text {
+    font-weight: 600;
+  }
+  .progress-number {
+    float: right;
+  }
+}
+
+/* Remove margins from progress bars when put in a table */
+.table {
+  tr > td .progress {
+    margin: 0;
+  }
+}
+
+// Variations
+// -------------------------
+.progress-bar-light-blue,
+.progress-bar-primary {
+  @include progress-bar-variant($light-blue);
+}
+
+.progress-bar-green,
+.progress-bar-success {
+  @include progress-bar-variant($green);
+}
+.progress-bar-green,
+.progress-bar-positive {
+  @include progress-bar-variant(#25cb68);
+}
+
+.progress-bar-aqua,
+.progress-bar-info {
+  @include progress-bar-variant($aqua);
+}
+
+.progress-bar-yellow,
+.progress-bar-warning {
+  @include progress-bar-variant($yellow);
+}
+
+.progress-bar-loading-file {
+  @include progress-bar-variant(#8bc34a);
+}
+
+.progress-bar-red,
+.progress-bar-danger {
+  @include progress-bar-variant($red);
+}
+// Quy add this
+// Step Progress Bar
+.c-step-progressbar{
+  width:100%;
+  max-width:600px;
+  .c-step-progressbar__list{
+    counter-reset:step;
+    margin:0px;
+    padding:0px;
+    // Number of list
+    &.has-3-col{
+      li{
+        width:33.33%;
+      }
+    }
+    &.has-4-col{
+      li{
+        width:25%;
+      }
+    }
+    &.has-5-col{
+      li{
+        width:20%;
+      }
+    }
+    // Detail
+    li{
+      list-style-type:none;
+      float:left;
+      font-size:14px;
+      position:relative;
+      text-align:center;
+      color:$oss-lighter;
+      &:before{
+        width:30px;
+        height:30px;
+        content: counter(step);
+        counter-increment: step;
+        line-height: 28px;
+        border:1px solid rgba(202,211,223,50);
+        display:block;
+        text-align:center;
+        margin: 0 auto 10px auto;
+        border-radius:50%;
+        background-color:#fff;
+        position:relative;
+        z-index:1;
+        font-weight:bold;
+      }
+      &:after{
+        width:100%;
+        height:3px;
+        content: '';
+        position:absolute;
+        background-color: $oss-lighter;
+        top:15px;
+        left:-50%;
+        z-index:0;
+      }
+      //
+      &:first-child{
+        &:after{
+          content:none;
+        }
+      }
+      // When active
+      &.is-active{
+        color:#54657E;
+        &:before{
+          border-color:$oss-green;
+          background-color:#fff;
+          color:$oss-green;
+        }
+      }
+      &.is-active:after, &.is-pass:after{
+        background-color:$oss-green;
+      }
+      &:after{
+        background-color:$oss-lighter;
+      }
+      // When dot pass
+      &.is-pass{
+        color:#54657E;
+        &:before{
+          content:'\f00c' !important;
+          font-family: "Fontawesome";
+          background-color:$oss-green;
+          border:1px solid $oss-green;
+          color:#fff;
+        }
+      }
+    }
+  }
+}

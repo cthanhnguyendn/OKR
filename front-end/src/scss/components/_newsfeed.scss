@@ -1,0 +1,1184 @@
+// Create form on newsfeed
+.c-newsfeed__create {
+  @include border-radius($newsfeed-post-border-radius, $newsfeed-post-border-radius, $newsfeed-post-border-radius, $newsfeed-post-border-radius);
+  background: #ffffff;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid $newsfeed-post-border-color;
+  .c-create-header {
+    color: $body-text-color;
+    display: block;
+    padding: $newsfeed-post-padding - 5px;
+    border-bottom: 1px solid $newsfeed-post-border-color;
+    position: relative;
+    .create-header-tabs {
+      float: left;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      .create-header-tabs__tab {
+        border-right: 1px solid $newsfeed-post-border-color;
+        margin-right: 7px;
+        padding-right: 5px;
+        cursor: pointer;
+        display: inline-block;
+        color: $link-color;
+        font-weight: bold;
+        position: relative;
+        .c-tabs-tab__cover {
+          border-radius: 3px;
+          padding: 3px 5px 3px 5px;
+          background: #fff;
+          &:hover {
+            @include transition(0.25s);
+            background: lighten($oss-lightest, 2%);
+          }
+        }
+        &.is-active {
+          color: $body-text-color;
+          .o-triangel-border {
+            display: block;
+          }
+        }
+        .o-icon {
+          font-size: 12px;
+          height: 18px;
+          max-width: 18px;
+        }
+      }
+    }
+    // More Tab
+    .create-header-moretabs {
+      float: right;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      .create-header-moretabs__tab {
+        cursor: pointer;
+        font-weight: bold;
+        white-space: nowrap;
+        .c-tabs-tab__cover {
+          padding: 3px 5px 3px 3px;
+          border-radius: 3px;
+          background: #fff;
+          color: $link-color;
+          &:hover {
+            background: lighten($oss-lightest, 2%);
+            @include transition(0.25s);
+          }
+        }
+      }
+    }
+  }
+  .c-create-body {
+    position: relative;
+    .c-create-body__user, .c-create-body__status {
+      float: left;
+    }
+    .c-create-body__user {
+      img {
+        height: 40px;
+        width: 40px;
+      }
+    }
+    .c-create-body__status {
+      margin-left: 10px;
+      textarea {
+        min-height: 70px;
+        width: 100%;
+        word-break: break-word;
+        padding: 10px 0px 10px 0px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 0;
+        resize: none;
+        overflow: visibile;
+      }
+      .wysihtml5-sandbox {
+        /* all */
+        /* all */
+        ::-webkit-input-placeholder {
+          font-weight: normal;
+          color: red;
+        }
+        ::-moz-placeholder {
+          font-weight: normal;
+          color: red;
+        }
+        /* firefox 19+ */
+        :-ms-input-placeholder {
+          font-weight: normal;
+          color: red;
+        }
+        /* ie */
+        input:-moz-placeholder {
+          font-weight: normal;
+          color: red;
+        }
+
+      }
+    }
+    .c-create-body__editor {
+      display: none;
+      border-radius: 3px;
+      background-color: #fff;
+      border: 1px solid $oss-lightest;
+      width: 100%;
+      &.is-show {
+        display: inline-block !important;
+        @include transition($transition-fn $transition-speed);
+      }
+      .feed-add-btn {
+        float: left;
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 40px;
+        text-align: center;
+        color: $body-icon-color;
+        &:hover {
+          background: lighten($oss-lightest, 2%);
+          @include transition(0.25s);
+        }
+      }
+    }
+  }
+  .c-create-body--more {
+    background: lighten($oss-lightest, 2%);
+    border-top: 1px solid $newsfeed-post-border-color;
+    // None margin last-child
+    .form-group {
+      margin-top: 10px;
+      margin-bottom: 0;
+      &:first-child {
+        margin-top: 0px;
+      }
+      .control-label {
+        padding-left: 10px;
+        padding-right: 0px;
+      }
+    }
+    // Display scrollbar when select2 is too many
+    .select2-container--default .select2-selection--multiple {
+      max-height: 100px;
+      overflow: auto;
+    }
+  }
+  .c-create-footer {
+    position: relative;
+    padding: 0px;
+    background: #fff;
+    border-top: 1px solid $newsfeed-post-border-color;
+    .c-create-footer__left, .c-create-footer__right {
+      display: inline-block;
+      vertical-align: middle;
+      // Vu modify
+      // height: 45px;
+    }
+    .c-create-footer__left {
+      float: left;
+      .feed-add-btn {
+        float: left;
+        cursor: pointer;
+        position: relative;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        line-height: 45px;
+        text-align: center;
+        color: $body-icon-color;
+        &:hover {
+          background: lighten($oss-lightest, 2%);
+          @include transition(0.25s);
+        }
+        input[type="file"] {
+          cursor: inherit;
+          opacity: 0;
+          position: absolute;
+          padding: 0;
+          margin: 0;
+          right: 0;
+          top: 0px;
+          height: 45px;
+          width: 45px;
+        }
+      }
+    }
+    .c-create-footer__right {
+      float: right;
+      padding: 8px 10px;
+      .o-dropdown, .btn {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .feed-btn {
+        padding: 0px 15px;
+        height: 30px;
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+// Attach file & images
+.c-create-body__attach {
+  display: table;
+  width: 100%;
+  .c-list-attach--images {
+    display: inline-block;
+    width: 100%;
+    [class^="file-attach"],
+    [class*="file-attach"] {
+      display: inline-block;
+      height: 100px;
+      width: 100px;
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+    .file-attach {
+      img {
+        height: 100px;
+        border: 1px solid lighten($newsfeed-post-border-color, 5%);
+      }
+    }
+    .file-attach--new {
+      font-size: 24px;
+      color: $body-text-color;
+      line-height: 100px;
+      text-align: center;
+      border: 2px dashed lighten($newsfeed-post-border-color, 5%);
+      cursor: pointer;
+      i.fa {
+        cursor: pointer;
+      }
+      // Hover
+      &:hover {
+        border-color: $oss-blue;
+        @include transition($transition-speed $transition-fn all)
+      }
+    }
+  }
+  .c-list-attach--files {
+    display: inline-block;
+    width: 100%;
+    // Responsive
+    // On SM screen
+    @media (max-width: $screen-sm-max) {
+      // Force .table-responsive class haven't border
+      .table-responsive {
+        border: 0px !important;
+      }
+    }
+  }
+  ul.list-image-attach{
+    @include clearfix();
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      margin: 5px;
+      float: left;
+      width: 145px;
+      height: 95px;
+      overflow: hidden;
+      &:first-child{
+        width: 305px;
+        height: 200px;
+        margin-left: 0px;
+      }
+      img.img-responsive{
+        max-width: none;
+      }
+    }
+  }
+}
+
+// Newsfeed header and filter
+.c-newsfeed__header {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 30px;
+  h3.o-pagetitle {
+    float: left;
+    margin-right: 50px;
+    .o-pagetitle__inner {
+      display: block;
+      word-wrap: break-word;
+    }
+    @media (max-width: $screen-sm) {
+      position: absolute;
+      left: 0;
+    }
+  }
+  .c-newsfeed-filter {
+    float: right;
+    margin-top: 15px;
+  }
+}
+
+// Listing newsfeed post
+.c-newsfeed__list {
+  list-style: none;
+  padding: 0px;
+}
+
+// Detail newsfeed post
+.c-newsfeed-post {
+  @include border-radius($newsfeed-post-border-radius, $newsfeed-post-border-radius, $newsfeed-post-border-radius, $newsfeed-post-border-radius);
+  background: #ffffff;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid $newsfeed-post-border-color;
+
+  // Is mini Space
+  &.is-mini-space {
+    $mini-width: 7px;
+    margin-bottom: $mini-width;
+    .c-newsfeed-post__header {
+      padding: $mini-width !important;
+      .o-post-user {
+        a {
+          padding-right: 0px;
+        }
+      }
+    }
+    .c-newsfeed-post__body {
+      padding: 0px $mini-width $mini-width $mini-width;
+      .post-caption {
+        margin-bottom: $mini-width - 2px;
+      }
+      .post-action {
+        padding-top: $mini-width - 2px;
+      }
+    }
+    .c-newsfeed-post__footer {
+      ul.post-footer__list-comments {
+        padding-top: 0px;
+        li.comment {
+          padding: ($mini-width - 2px) $mini-width;
+        }
+      }
+    }
+  }
+  // When need to no border
+  &.has-no-border {
+    border-radius: 0px !important;
+  }
+  // Is Lightbox comments
+  &.is-lightbox-comment {
+    // Force User comment box to bottom
+    .post-footer__u-comment {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+  }
+  // If post is announcement and sticked
+  &.is-announcement {
+    &.is-sticked {
+      // Sticker will be red
+      .c-newsfeed-post__header {
+        .c-post-sticker {
+          background-image: url(images/newsfeed/bookmark.svg) !important;
+        }
+      }
+    }
+  }
+
+  .c-newsfeed-post__header {
+    color: $body-text-color;
+    display: block;
+    padding: $newsfeed-post-padding;
+    position: relative;
+    &.has-bot-border {
+      border-bottom: 1px solid $newsfeed-post-border-color;
+    }
+    .o-post-user {
+      float: left;
+      .username, .o-post-user__action {
+        display: inline-block;
+      }
+      .username {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+    }
+    .o-post-dropdown {
+      float: right;
+      color: $body-text-color;
+      font-weight: bold;
+      cursor: pointer;
+
+    }
+    .c-post-sticker {
+      width: 30px;
+      height: 40px;
+      position: absolute;
+      top: -3px;
+      right: 25px;
+      background-image: url(images/newsfeed/bookmark-gray.svg);
+      &::before {
+        content: '';
+        @include transition($transition-speed $transition-fn);
+      }
+    }
+    .pin-announcement {
+      float: right;
+      color: #54657e;
+      font-weight: bold;
+      cursor: pointer;
+      .btn-icon {
+        background: transparent;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        color: #c7c7cc;
+        margin-left: 10px;
+      }
+    }
+    .pin-announcement.unpin {
+      i.fa.fa-thumb-tack {
+        @include rotate(45deg)
+      }
+      .pin-sign {
+        display: none;
+      }
+    }
+    .pin-sign,.read-sign {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: none;
+    }
+
+  }
+  .c-newsfeed-post__body {
+    padding: 5px 10px 10px 10px;
+    .post-caption {
+      margin-bottom: 15px;
+      // For a long long word still inside div
+      p {
+        width: 100%;
+        word-break: break-word;
+        a {
+          word-break: break-all;
+        }
+      }
+    }
+    .announ-title{
+      font-size: 16px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      color: #455a64;
+    }
+    .post-content {
+      margin-bottom: 15px;
+      @extend %clearfix;
+      // File
+      &.is-file {
+        .box-file {
+          background: lighten($oss-lightest, 5%);
+          border: 1px solid lighten($newsfeed-post-border-color, 5%);
+          margin-bottom: 10px;
+          .box-file__file {
+            border-right: 1px solid lighten($newsfeed-post-border-color, 5%);
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: middle;
+            width: 75px;
+            i {
+              font-size: 48px;
+            }
+            &.is-word {
+              i {
+                color: $link-color;
+              }
+            }
+            &.is-excel {
+              i {
+                color: $oss-green;
+              }
+            }
+          }
+          .box-file__name {
+            padding: 10px;
+            // Avoid text is too long
+            text-overflow: ellipsis;
+            word-break: break-all;
+            overflow: hidden;
+            a.o-text-block {
+              font-size: 16px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+      // Photo
+      &.is-photos {
+        position: relative;
+        .c-photos-group {
+          position: relative;
+          z-index: 1;
+          margin-right: 5px;
+          .o-photos-group__photo {
+            float: left;
+            background-color: transparent;
+            width: (100% / 3);
+            padding: 5px;
+            img {
+              width: auto;
+              height: 150px;
+            }
+          }
+        }
+        .c-photos-count {
+          display: block;
+          position: absolute;
+          padding: 5px 7px;
+          border: 1px solid lighten($newsfeed-post-border-color, 5%);
+          border-radius: $newsfeed-post-border-radius;
+          background-color: #fff;
+          color: $link-color;
+          text-align: center;
+          z-index: 2;
+          right: 0px;
+          bottom: 30px;
+
+        }
+        .photo-layer {
+          display: block;
+          height: 150px;
+          width: 150px;
+          position: absolute;
+          border: 1px solid lighten($newsfeed-post-border-color, 5%);
+          background-color: #fff;
+          bottom: -3px;
+          right: 5px;
+        }
+      }
+      // Event
+      // Mixin using in local
+      @mixin box-icon($pad,$font-size,$width) {
+        padding: $pad;
+        border-radius: $newsfeed-post-border-radius;
+        margin: 0 auto;
+        font-size: $font-size;
+        width: $width;
+        vertical-align: middle;
+      }
+      &.is-event {
+        @extend %clearfix;
+        .box-event {
+          .box-event__kind {
+            .o-icon {
+              @include box-icon(5px, 36px, 60px);
+            }
+          }
+        }
+      }
+      // Task
+      &.is-task {
+        .box-task {
+          .box-task__icon {
+            .o-icon {
+              @include box-icon(5px, 36px, 60px);
+            }
+          }
+        }
+      }
+      // ticket
+      &.is-ticket {
+        .box-ticket {
+          .box-ticket__icon {
+            .o-icon {
+              @include box-icon(5px, 36px, 60px);
+            }
+          }
+        }
+      }
+      &.is-link {
+        .box-link {
+          .box-link__icon {
+            .o-icon {
+              font-size: 60px;
+              color: #fff;
+              margin: 0px auto;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      // Eform
+      &.is-eform {
+        .box-eform {
+          .box-eform__icon {
+            .o-icon {
+              @include box-icon(5px, 36px, 60px);
+            }
+          }
+        }
+      }
+    }
+    .post-action {
+      border-top: 1px solid $newsfeed-post-border-color;
+      padding-top: 10px;
+      .post-action__btn {
+        margin-right: 15px;
+        font-weight: bold;
+        cursor: pointer !important;
+        a {
+          color: $oss-light;
+          &:hover {
+            color: lighten($oss-light, 5%);
+            @include transition($transition-speed $transition-fn all)
+          }
+        }
+        &.is-clicked {
+          a {
+            color: $link-color;
+          }
+        }
+      }
+    }
+    .post-announcement {
+      display: block;
+      margin-bottom: 10px;
+      button, span {
+        display: inline-block;
+      }
+      button {
+        margin-right: 5px;
+      }
+    }
+  }
+  .c-newsfeed-post__footer {
+    background: $newsfeed-post-footer-bg;
+    border-top: 1px solid $newsfeed-post-border-color;
+    padding: 0px;
+    .post-footer__count {
+      padding: 5px 10px;
+      border-bottom: 1px solid $newsfeed-post-border-color;
+      &::after {
+        clear: both;
+      }
+    }
+    .post-footer__u-comment {
+      padding: 10px;
+    }
+    .post-footer__list-comments {
+      &.has-no-border {
+        .comment {
+          border-bottom: 0px !important;
+        }
+      }
+      padding: 10px 0px 0px 0px;
+      .comment {
+        padding: 8px 10px;
+        border-bottom: 1px solid $newsfeed-post-border-color;
+        &:first-of-type {
+          padding-top: 0;
+        }
+        img {
+          @extend .img-sm;
+          float: left;
+        }
+        .comment-text {
+          margin-left: 40px;
+          position: relative;
+          .comment-text__action {
+            font-size: 13px;
+            color: $oss-light;
+            a {
+              color: $oss-light;
+              &:hover {
+                text-decoration: underline;
+                @include transition($transition-speed $transition-fn all);
+              }
+            }
+          }
+          .comment-text__edit {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            visibility: hidden;
+            i {
+              color: $oss-light;
+              font-size: 12px;
+            }
+            &.is-visible {
+              visibility: visible;
+            }
+          }
+          // Hover{
+          &:hover {
+            .comment-text__edit {
+              visibility: visible;
+              @extend %transition;
+            }
+          }
+        }
+        .username {
+          display: block;
+          a {
+            font-weight: bold;
+          }
+          img {
+            float: none;
+          }
+        }
+        .comment__ul-reply {
+          padding: 10px 0px 10px 10px;
+          margin-left: 28px;
+          border-left: 2px solid $newsfeed-post-border-color;
+          .reply-comment {
+            padding: 5px 0px;
+            &:first-of-type {
+              padding-top: 0px;
+            }
+            &:last-of-type {
+              padding-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.is-share {
+    .post-content {
+      margin-bottom: 10px;
+    }
+  }
+  &.is-mail {
+    .c-newsfeed-post__body {
+      border-left: 2px solid $newsfeed-post-border-color;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      .mail-title {
+        @extend %clearfix;
+        position: relative;
+        margin-bottom: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        h4 {
+          font-size: 16px;
+          width: 100%;
+          // Vu modify
+          height: auto;
+          word-break: break-word;
+          //
+        }
+      }
+      .mail-content {
+        .mail-content__file {
+          border-top: 1px solid lighten($newsfeed-post-border-color, 5%);
+          padding-top: 10px;
+          img {
+            border-radius: 3px;
+            max-width: 100px;
+          }
+        }
+        .mail-content__text {
+          width: 100%;
+          word-break: break-word;
+        }
+      }
+      .mail-countrep {
+        position: relative;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &::before, &::after {
+          content: ' ';
+          border-top: 1px solid lighten($newsfeed-post-border-color, 5%);
+          position: absolute;
+          left: 0px;
+          line-height: 0px;
+          right: 0;
+        }
+        &::before {
+          top: 17px;
+        }
+        &::after {
+          top: 22px;
+        }
+        .mail-countrep__numbers {
+          background: #fff;
+          border-radius: 50%;
+          line-height: 40px;
+          width: 40px;
+          position: relative;
+          border: 1px solid lighten($newsfeed-post-border-color, 5%);
+          z-index: 1;
+          box-sizing: border-box;
+          text-align: center;
+          display: block;
+          font-size: 18px;
+        }
+      }
+      &.is-repmail {
+        .o-post-user {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          &:first-child {
+            margin-top: 0px;
+          }
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+
+      }
+    }
+  }
+  &.has-activities {
+    .c-newsfeed-post__header {
+      border-bottom: 1px solid $newsfeed-post-border-color;
+      margin-bottom: 10px;
+    }
+  }
+  &.is-announcement {
+    .is-timekeeping {
+      p {
+        max-width: 350px;
+      }
+      img {
+        width: 70px;
+        max-height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  &.is-read{
+    .read-sign{
+      display: block;
+    }
+  }
+}
+
+// End newsfeed
+
+// Components for Newsfeed
+.c-photos-group {
+  .o-photos-group__photo {
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    max-height: 640px;
+    img {
+      vertical-align: bottom;
+    }
+  }
+}
+
+.c-post-shared-content {
+  border-left: 2px solid $newsfeed-post-border-color;
+  padding: 7px 0px 7px 10px;
+  margin-bottom: 15px;
+  p {
+    margin: 0px;
+  }
+  .c-post-shared-content__user {
+    margin-bottom: 7px;
+    a {
+      display: block;
+    }
+  }
+  .c-post-shared-content__caption {
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+      color: lighten($body-text-color, 15%);
+    }
+  }
+}
+
+.o-triangel-border {
+  display: none;
+  border-bottom: 8px solid $newsfeed-post-border-color;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -10px;
+  font-size: 0px;
+  height: 0;
+  left: 40%;
+  line-height: 0;
+  position: absolute;
+  width: 0;
+  &::after {
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    left: -8px;
+    content: '';
+    position: absolute;
+    top: 1px;
+  }
+}
+
+// Event Composer
+.c-timeend {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  &:hover {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// File update box
+.c-list-attach--files {
+  table {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    tr {
+      padding: 3px 5px 2px 5px;
+      background: lighten($oss-lightest, 2%);
+      &:hover {
+        background: lighten($oss-lightest, 3%);
+        @include transition($transition-fn $transition-speed all);
+      }
+      td {
+        border-top: 1px solid $oss-lightest;
+        border-bottom: 1px solid $oss-lightest;
+        &:first-child {
+          font-weight: bold;
+          max-width: 200px;
+          overflow: hidden;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          border-top: 1px solid $oss-lightest;
+          border-bottom: 1px solid $oss-lightest;
+          border-left: 1px solid $oss-lightest;
+        }
+        &:last-child {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border-top: 1px solid $oss-lightest;
+          border-bottom: 1px solid $oss-lightest;
+          border-right: 1px solid $oss-lightest;
+          width: 50px;
+          text-align: center;
+        }
+      }
+    }
+    [id^="removeattach"],
+    [id*="removeattach"] {
+      a {
+        color: $oss-light;
+        @include transition($transition-speed $transition-fn all);
+        &:hover {
+          color: darken($oss-light, 2%);
+        }
+      }
+    }
+  }
+}
+
+// File on update
+.file-attach {
+  position: relative;
+  .progress {
+    position: relative;
+    z-index: 99;
+    width: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+  img {
+    width: 100%;
+  }
+  [id^="img-preview-delete"],
+  [id*="img-preview-delete"],
+  [id^="img-preview-forward-delete"],
+  [id*="img-preview-forward-delete"] {
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    a.fa {
+      color: $oss-lightest;
+      opacity: 0;
+      cursor: pointer;
+      @include transition($transition-fn $transition-speed all);
+    }
+  }
+  .file-attach--overlay {
+    outline: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &:after {
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      @include transition($transition-fn $transition-speed all);
+    }
+  }
+  // .file-attach on.hover
+  &:hover {
+    .file-attach--overlay {
+      &:after {
+        background-color: rgba(0, 0, 0, .4);
+      }
+    }
+    [id^="img-preview-delete"],
+    [id*="img-preview-delete"],
+    [id^="img-preview-forward-delete"],
+    [id*="img-preview-forward-delete"] {
+      a.fa {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.file-attach--new {
+  position: relative;
+  input[type="file"] {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+// In-form button
+.c-informbtn {
+  position: absolute;
+  right: 20px;
+  top: 3px;
+}
+
+// Contact form input
+.c-contact-form {
+  position: relative;
+  // To be continues
+}
+
+// Dropdown list private on composer box
+.c-dropdown-private {
+  span {
+    display: list-item;
+    padding: 3px 20px;
+    cursor: pointer;
+    &.has-bottomborder {
+      border-bottom: 1px solid $oss-lighter;
+    }
+    .fa {
+      margin-right: 10px;
+    }
+    &:hover {
+      background-color: $oss-lightest;
+      @extend %transition;
+    }
+  }
+}
+
+// Error when upload file in composer
+.f-error {
+  font-weight: bold;
+  margin-left: 10px;
+  color: $oss-red;
+}
+
+// Notification
+//// WIDGET ////
+.c-widget {
+  &.is-birthday {
+    .o-box__header {
+      background-image: url(images/newsfeed/birthday-1.svg);
+      background-repeat: no-repeat;
+      background-position: left;
+      text-align: center;
+    }
+    .o-box__border {
+      max-height: 270px;
+    }
+  }
+  &.is-announcement {
+    .o-box__body {
+      max-height: 300px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      // List .item
+      li.item {
+        text-overflow: ellipsis;
+        word-break: break-word;
+        // This class was added by Developer not Quy
+        // it's maybe suck but i have to use it, lmao ;))
+        .announ-title-right-sidebar {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.announcement {
+  .is-read {
+    border: solid 1px #9e9e9e;
+    color: #9e9e9e;
+  }
+}
+
+.footer-toolbox {
+  @include clearfix();
+  .toolbar {
+    ul.control__editor {
+      padding-left: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.people-list{
+  @include clearfix();
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  li{
+    @include clearfix();
+    display: block;
+    border-bottom: 1px solid #eceff1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    &:first-child{
+      border-top: 0px;
+    }
+
+    .name{
+      font-size: 14px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      color: #03a9f4;
+      margin-top: 4px;
+      display: inline-block;
+      margin-left: 4px;
+    }
+    .time{
+      margin-top: 5px;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: right;
+    }
+  }
+}

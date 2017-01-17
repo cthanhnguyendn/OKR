@@ -1,0 +1,16 @@
+$okr-side-bar-width: 250px;
+.okr-container{
+  display: flex;
+  min-height: 100%;
+  .okr-side-bar{
+    width: $okr-side-bar-width;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    min-height: 100%;
+  }
+  .okr-right-content{
+    width: 100%;
+    flex: 1;
+  }
+}
+

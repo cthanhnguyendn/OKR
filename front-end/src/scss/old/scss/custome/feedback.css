@@ -1,0 +1,447 @@
+
+.bl-feedback-area{
+	float: right;
+    text-align: right;
+    margin-top: 16px;
+    margin-right: 65px;
+    width: 100px;
+}
+
+.bl-bold-text {
+	font-weight: bold;
+}
+.bl-wrapper {
+	width: 350px;
+	max-height: 100vh;	
+	border:1px solid #cad3df;
+    position: absolute;
+    background-color: #fff;
+	color: #333333;
+    text-align: left;
+
+    bottom: -7px;
+    right: -15px;
+}
+.bl-header {
+	font-size: 16px;
+	padding: 10px;	
+	text-align: center;
+	border-bottom: 1px solid #cad3df;
+		
+}
+.bl-wrapper .fa-angle-left {
+	float: left;
+}
+.bl-close {
+	float: right;
+	cursor:pointer;
+}
+.bl-back {
+	cursor: pointer;
+	float: left;
+    padding-top: 4px;
+}
+.bl-content {
+    padding: 10px 10px 0px 10px;
+    max-height: 95vh;
+}
+.bl-custom-pad {
+	padding: 4px 0px;	
+	position: relative;
+}
+.bl-transfer {
+    border: 1px solid #dad9d9;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 10px;
+}
+.bl-transfer-title {
+	padding-bottom: 10px;
+}
+.bl-wrapper .fa-plus {
+	float: right;
+}
+.bl-wrapper h4 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.bl-wrapper textarea {
+	width: 100%;
+	border-color: #ccc;
+	border-radius:5px;
+}
+.bl-content-for-web-wrapper,
+.bl-error-wrapper {
+	padding: 10px;
+	background: #e4e4e4;
+	border-radius: 5px;
+	margin: 5px 0;
+}
+.bl-wrapper .fa-envelope {
+	color:white;
+}
+.bl-response {
+	cursor: pointer;
+	color:white;
+    text-align: center;
+    background: #5ccf2b;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.bl-sent-response {
+	padding: 10px 0;
+	text-align: center;
+	
+}
+
+.bl-status {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.bl-list-wrapper{
+	padding-bottom: 10px;
+}
+.bl-list {
+	max-height: 76vh;
+    width: 318px;
+}
+.bl-list-name {
+	float: left;
+	color:blue;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 205px;
+}
+.bl-list-tag {
+	float: right;
+}
+.bl-tag {
+	color:white;
+	padding:2px 5px;
+	font-size: 12px;
+	border-radius:3px;
+}
+.bl-tag-success {
+	background:green;	
+}
+.bl-tag-danger {
+	background: red;
+}
+.bl-tag-warning {
+	background: orange;
+}
+.bl-tag-primary {
+	background: blue
+}
+.bl-list-block {
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius:5px;
+	margin:10px 0;
+}
+.bl-sale {
+	clear:both;
+    padding: 6px 0;
+}
+.bl-structure-avt
+{
+	width: 24px;
+	height: 24px;
+	display: inline;
+}
+
+.bl-avt{
+	width: 35px;
+	height: 35px;
+}
+
+.bl-inline{
+	display: inline;
+}
+
+.bl-wrapper .tag {
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+.bl-wrapper .tag-primary {
+    background: blue;
+}
+.bl-bold-text {
+	font-weight: 600;
+}
+.bl-header-detail {
+	overflow: hidden;
+	padding: 20px;
+}
+.bl-ticket-wrapper {
+	width: 600px;
+	border: 1px solid #d7d7d7;
+	color: #333333;
+	background: white;
+}
+.bl-title {
+	float: left;
+}
+.bl-home,
+.bl-title-text {
+	display: inline-block;
+	font-size:19px;
+}
+.bl-status-text{
+	display: inline-block;
+    margin-right: 8px;
+}
+.bl-wrapper .tag-primary {
+	display: inline-block;
+}
+.bl-content-detail {
+    padding: 0 20px 20px 20px;
+}
+.bl-sender {
+	font-size:18px;
+}
+.bl-content-text {
+	padding: 10px;
+	background: white;
+	border-radius:5px;
+	color: #54567E;
+}
+.bl-sender-title,
+.bl-sender,
+.bl-send-time,
+.bl-function,
+.bl-content-title,
+.bl-file-attached-title {
+	margin: 10px 0;
+}
+.bl-file-attached  {
+	overflow: hidden;
+	display: inline;
+}
+.bl-file-info {
+    background: #eae8e8;
+    padding: 5px;
+}
+.bl-camera,
+.bl-file-name,
+.bl-file-size,
+.bl-download {
+	display: inline-block;
+	font-size: 8px;
+}
+.bl-download {
+	float: right;
+	background: white;
+	padding: 3px;
+	font-size: 8px;
+	margin-top: 5px;
+	border: 1px solid #d7d6d6;
+}
+.bl-file-attached-block {
+	display: inline-block;
+	margin-right: 10px;
+	width: 81px;
+}
+.bl-comment-block {
+	border: 1px solid #cad3df;
+	border-bottom: none;
+    background-color: #EEF2F4;
+}
+.bl-comment-wrapper {
+    padding: 10px;
+    border-bottom: 1px solid #cad3df;
+}
+.bl-avatar {
+	display: inline-block;
+	vertical-align: top;
+	width: 35px;
+	height: 35px;
+	background: grey;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+.bl-comment-content {
+	display: inline-block;
+    vertical-align: top;
+    width: 475px;
+    position: relative;
+}
+.bl-comment-name {
+    color: #0082D5;
+}
+.bl-like-and-time {
+	font-size: 11px;
+	color:grey;
+}
+.bl-image {
+	width: 81px;
+	height: 100px;
+	background: green;
+}
+.bl-comment-input {
+	width: 100%;
+	padding: 5px;
+}
+.bl-picture {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: grey;
+}
+
+.bl-statistics{
+	border-top: 1px solid #cad3df;
+	border-bottom: 1px solid #cad3df;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.bl-total-user{
+	display: inline;
+    float: right;
+    text-align: right;
+    font-size: 16px;
+}
+.bl-well{
+	background-color: #EEF2F4;
+	border: 1px solid #cad3df;
+}
+
+.bl-file-enclosed-wrapper input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.bl-liked-box{
+    border-top: 1px solid #cad3df;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.bl-like-btn{
+	cursor: pointer;
+}
+
+.bl-total-user-wrapper{
+	overflow: hidden;
+}
+
+.bl-total-user-title{
+	float: left;
+}
+
+.bl-select-cc{
+	display: inline-block;
+    width: 100%;
+}
+
+.bl-structure-cc{
+	display: block;
+    margin-bottom: 10px;
+    margin-left: 6px;
+    position: absolute;
+    top: 14px;
+    right: 13px;
+}
+
+div.bl-custom-tree ul {
+	background-color: #fff !important;
+}
+
+input[type=checkbox].bl-checkbox-hasChoosed {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+input[type=checkbox].bl-checkbox-hasChoosed + label.bl-label-hasChoosed {
+	
+	vertical-align:middle;
+	cursor:pointer;
+
+}
+
+label.bl-label-hasChoosed {
+	height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    background-color: green;
+    padding: 2px;
+	
+}
+
+.bl-cancel{
+	background-color: #37474f;
+}
+
+.bl-disable{
+	cursor: not-allowed;
+    background-color: #dddddd;
+}
+
+.feedback-icon {
+    position: fixed;
+    background: #FFFFFF;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+    border-radius: 5px 5px 0 0;
+    height: 30px;
+    width: 132px;
+    overflow: visible;
+    bottom: 0;
+    right: 10px;
+    z-index: 100;
+    padding: 6px 6px 6px 34px;
+
+    background-image: url("/img/FeedbackICON.svg");
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+    background-size: 20px 20px;
+}
+
+	.feedback-btn-container a, .feedback-btn-container a:hover,.feedback-btn-container a:visited{
+		color: #455a64;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+.feedback-icon-label{
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.feedback-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.bl-modal-comp .Select-arrow-zone,
+.bl-select-cc .Select-arrow-zone {
+    right: 25px;
+    top: 7px;
+    display: block;
+	position: absolute;
+}
+.bl-modal-comp .Select-multi-value-wrapper,
+.bl-select-cc .Select-arrow-zone {
+	padding-right: 25px;
+}

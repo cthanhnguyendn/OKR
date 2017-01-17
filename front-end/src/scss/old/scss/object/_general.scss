@@ -1,0 +1,501 @@
+/*
+ * Object: The smallest
+ * -------------------------
+ */
+// Color
+ // Icon
+ .o-icon{
+ 	margin-right:5px;
+ }
+ .o-gradient-icon{
+ 	padding:3px;
+ 	color:#fff;
+ 	@include border-radius(3px,3px,3px,3px);
+		&.is-blue{
+			@extend %blue-gradient;
+		}
+		&.is-orange{
+			@extend %orange-gradient;
+		}
+		&.is-green{
+			@extend %green-gradient;
+		}
+		&.is-red{
+			@extend %red-gradient;
+		}
+ }
+// plocks Icon
+.o-clock-icon{
+	height:65px;
+	width:65px;
+	background-image: url(images/o-clock.svg);
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	&::before{
+		content: "";
+	}
+}
+// Clocks
+.o-clock{
+	display:table;
+	@extend %clearfix;
+	.o-clock__hour	,.o-clock__minutes{
+		@extend %light-gradient;
+		font-size:36px;
+		padding:20px 15px;
+		border-radius:3px;
+		border:1px solid lighten($newsfeed-post-border-color, 5%);
+	}
+	.o-clock__hour, .o-clock__minutes, .o-clock__sign{
+		display:table-cell;
+		text-align:center;
+		vertical-align: middle;
+	}
+	.o-clock__sign{
+		padding-left:3px;
+		padding-right:3px;
+	}
+}
+// Layout
+.o-layout-sidebar{
+	float:left;
+}
+.o-layout-wcontent{
+
+}
+.o-layout-container{
+	position:relative;
+	@media (min-width: $screen-sm-min) {
+	width: 100%;
+	}
+	@media (min-width: $screen-md-min) {
+	width: 100%;
+	}
+	@media (min-width: $screen-lg-min) {
+	width: $container-lg;
+	}
+	@extend %clearfix;
+}
+.o-layout-center{
+	// All devices small than 768px - Phone
+	@media (max-width: $screen-sm){
+		width: 100%;
+	}
+	@media (min-width: $screen-sm-min) {
+	width: auto;
+	}
+	@media (min-width: $screen-md-min) {
+	width: auto;
+	}
+	@media (min-width: $screen-lg-min) {
+	width: 806px;
+	}
+	@extend %clearfix;
+}
+// Lebel
+.o-label{
+	border-radius:3px;
+	border:1px solid $oss-lighter;
+	text-align:center;
+	padding:6px 12px;
+	background: $oss-lightest;
+	font-weight:normal;
+	a{
+		color:$body-text-color;
+		.fa{
+			margin-left:10px;
+		}
+	}
+	&:hover{
+		background-color:lighten($oss-lightest,2%);
+		@extend %transition;
+	}
+	&.o-label--sm{
+		padding:3px 5px;
+		font-size:90%;
+	}
+}
+.o-label--green{
+	background-color:$oss-green;
+}
+.o-label--red {
+	background-color:$oss-red;
+}
+// User-avatar - use in span
+.c-useravatar{
+	width:45px;
+	height:45px;
+	img{
+		width: 100%;
+		height:100%;
+		border-radius: 50px;
+	}
+}
+// Box
+.o-box{
+	border:1px solid $oss-lighter;
+	border-top:1px solid $oss-lighter !important;
+	.o-box__header{
+		background-color: $oss-lightest;
+		border-bottom:1px solid $oss-lighter;
+		.box-title{
+			color:$oss-bold;
+			font-weight:600;
+			font-size:16px;
+		}
+		&.o-box__header--white{
+			background-color:#fff !important;
+		}
+	}
+	.o-box__body{
+		padding-top:15px;
+		padding-bottom: 15px;
+	}
+	&.o-box--noshadow{
+		box-shadow:none;
+	}
+	// Hover
+	&.has-hover{
+		&:hover{
+			border-color:$oss-blue;
+			border-top:1px solid $oss-blue !important;
+			@include transition($transition-speed $transition-fn);
+		}
+	}
+	&.is-dotted{
+		border:2px dotted $oss-lighter !important;
+	}
+	&.is-active{
+		border:1px solid $oss-blue;
+		border-top:1px solid $oss-blue !important;
+		@include transition($transition-speed $transition-fn);
+	}
+	&.is-no-topborder{
+		border-top:0px !important;
+	}
+}
+// Divider
+.o-listdivider{
+	&:after{
+		content:" ";
+		height:1px;
+		width:100%;
+		background-color:$oss-lighter;
+		display:block;
+		position: relative;
+		margin:7px 0;
+	}
+}
+// Color "a" tag = body color
+.o-ablack,.o-alight{
+	a{
+		&:hover{
+			color:lighten($body-text-color,2%);
+			@extend %transition;
+		}
+	}
+}
+.o-ablack{
+	a{
+		color:$body-text-color;
+	}
+}
+.o-alight{
+	a{
+		color:$oss-light;
+	}
+}
+// Shadow 1 to 5
+.o-shadow1{
+	box-shadow: 0 1px 3px rgba(84, 101, 126, 0.12),  0 1px 2px rgba(84, 101, 126, 0.24) !important;
+	-webkit-box-shadow: 0 1px 3px rgba(84, 101, 126, 0.12),  0 1px 2px rgba(84, 101, 126, 0.24) !important;
+}
+.o-shadow2{
+	box-shadow: 0 3px 6px rgba(84, 101, 126, 0.16),  0 3px 6px rgba(84, 101, 126, 0.23) !important;
+	-webkit-box-shadow: 0 3px 6px rgba(84, 101, 126, 0.16),  0 3px 6px rgba(84, 101, 126, 0.23) !important;
+}
+.o-shadow3{
+	box-shadow: 0 10px 20px rgba(84, 101, 126, 0.19),  0 6px 6px rgba(84, 101, 126, 0.23) !important;
+	-webkit-box-shadow: 0 10px 20px rgba(84, 101, 126, 0.19),  0 6px 6px rgba(84, 101, 126, 0.23) !important;
+}
+.o-shadow4{
+	box-shadow:  0 14px 28px rgba(84, 101, 126, 0.25),  0 10px 10px rgba(84, 101, 126, 0.22) !important;
+	-webkit-box-shadow:  0 14px 28px rgba(84, 101, 126, 0.25),  0 10px 10px rgba(84, 101, 126, 0.22) !important;
+}
+.o-shadow5{
+	box-shadow: 0 19px 38px rgba(84, 101, 126, 0.30),  0 15px 12px rgba(84, 101, 126, 0.22) !important;
+	-webkit-box-shadow:  0 19px 38px rgba(84, 101, 126, 0.30),  0 15px 12px rgba(84, 101, 126, 0.22) !important;
+}
+// Heading Title
+.o-headingblock{
+	display:block;
+	margin-top: 30px;
+	margin-bottom:15px;
+	span{
+		color:$oss-light;
+		&.small{
+			font-size:95%;
+		}
+	}
+}
+////// HR LINE //////
+hr{
+	color:$oss-lighter;
+	&.o-hronly{
+		margin:0;
+		padding:0;
+	}
+	&.o-hr--light{
+		color:$oss-light;
+	}
+}
+////// FLEX //////
+.o-flex{
+	display:flex;
+display:-webkit-flex;
+}
+.o-flexcenter{
+	@extend .o-flex;
+	justify-content: center;
+}
+.o-flexbetween{
+	@extend .o-flex;
+	justify-content: space-between;
+}
+////// POPOVER CONTACT BOX ///////
+.o-popover{
+	position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $zindex-popover; // Bootstrap variable
+  display: none;
+  max-width: $max-width-popover; // Bootstrap variable
+  width:$width-popover;
+  // Our parent element can be arbitrary since popovers are by default inserted as a sibling of their target element.
+  // So reset our font and text properties to avoid inheriting weird values.
+  @include reset-text;
+  font-size: $font-size-base;
+
+  background-color: transparent;
+
+  // Offset the popover to account for the popover arrow
+  &.top     { margin-top: -$popover-arrow-width; } // Bootstrap variable
+  &.right   { margin-left: $popover-arrow-width; } // Bootstrap variable
+  &.bottom  { margin-top: $popover-arrow-width; } // Bootstrap variable
+  &.left    { margin-left: -$popover-arrow-width; } // Bootstrap variable
+  // Force style to popover tilte
+  .popover-title{
+  	padding:0 !important;
+  	background-color:transparent;
+  	border-bottom:0px;
+  	border-radius:0px;
+  }
+  // Force Box
+  .o-box{
+  	margin-bottom:0px !important; }
+  //// Arrow
+  // .arrow is outer, .arrow:after is inner
+  .arrow{
+  		&,
+		&:after {
+		    position: absolute;
+		    display: block;
+		    width: 0;
+		    height: 0;
+		    border-color: transparent;
+		    border-style:solid;
+		  }
+	}
+	.arrow{
+		 border-width: $popover-arrow-outer-width;
+		 border-radius: $box-border-radius;
+		 &:after{
+		 	border-width: $popover-arrow-width;
+  			content: "";
+		 }
+	}
+}
+.o-popover {
+  &.top > .arrow {
+    left: 50%;
+    margin-left: -$popover-arrow-outer-width+1;
+    border-bottom-width: 0;
+    border-top-color: $popover-arrow-outer-fallback-color; // IE8 fallback
+    border-top-color: $oss-lighter;
+    bottom: -$popover-arrow-outer-width+1;
+    z-index: 9;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -$popover-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: $popover-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    top: 50%;
+    left: -$popover-arrow-outer-width+1;
+    margin-top: -$popover-arrow-outer-width+1;
+    border-left-width: 0;
+    border-right-color: $popover-arrow-outer-fallback-color; // IE8 fallback
+    border-right-color: $oss-lighter;
+    z-index: 9;
+    &:after {
+      content: " ";
+      left: 1px;
+      bottom: -$popover-arrow-width;
+      border-left-width: 0;
+      border-right-color: $popover-arrow-color;
+    }
+  }
+  &.bottom > .arrow {
+    left: 50%;
+    margin-left: -$popover-arrow-outer-width+1;
+    border-top-width: 0;
+    border-bottom-color: $popover-arrow-outer-fallback-color; // IE8 fallback
+    border-bottom-color: $oss-lighter;
+    top: -$popover-arrow-outer-width+1;
+    z-index: 9;
+    &:after {
+      content: " ";
+      top: 1px;
+      margin-left: -$popover-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: $popover-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    top: 50%;
+    right: -$popover-arrow-outer-width+1;
+    margin-top: -$popover-arrow-outer-width+1;
+    border-right-width: 0;
+    border-left-color: $popover-arrow-outer-fallback-color; // IE8 fallback
+    border-left-color: $oss-lighter;
+    z-index: 9;
+    &:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: $popover-arrow-color;
+      bottom: -$popover-arrow-width;
+    }
+  }
+}
+
+// Vertical tabs
+.o-vertical-tabs{
+	list-style:none;
+	padding-left:0px;
+	border-bottom:0px;
+	margin-bottom:0px;
+	padding-top:15px;
+	padding-bottom:15px;
+	li{
+		float:none;
+		padding: 3px 15px 3px 20px;
+		position:relative;
+		a{
+			color:$oss-light;
+		}
+		&.active{
+			a{
+				font-weight:600;
+				color:$body-text-color;
+				&::before{
+					background-color:$oss-blue;
+					content: ' ';
+					height:24px;
+					left:0px;
+					margin-top:-12px;
+					position:absolute;
+					top:50%;
+					width:3px;
+				}
+			}
+		}
+	}
+}
+// Horizontal Tab
+.o-horizontal-tab{
+	list-style:none;
+	padding-left:0px;
+	border-bottom:0px;
+	margin-bottom:0px;
+	padding-top:15px;
+	padding-bottom:15px;
+	li{
+		float:left;
+		a{
+			padding:15px 20px 10px 20px;
+			position:relative;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			color:$body-text-color;
+			cursor: pointer;
+			.o-li-content{
+
+			}
+			.o-li-border{
+				height:2px;
+				width:100%;
+				position:absolute;
+				left:0px;
+				bottom:0px;
+				background-color:$oss-blue;
+				opacity:0;
+				@include transition(0.1 $transition-fn);
+			}
+			// On hover
+			&:hover{
+				color:$body-text-color;
+				.o-li-border{
+					opacity:0.2;
+				}
+			}
+		}
+		// On active
+		&.is-active,&.active{
+			a{
+				font-weight:bold;
+			}
+			.o-li-border{
+				opacity:1;
+			}
+		}
+	}
+	&::before{
+		clear:both;
+	}
+}
+// Mini circle
+.o-mini-circle{
+	height:20px;
+	width:20px;
+	border:1px solid $oss-lightest;
+	border-radius:50%;
+	display:inline-block;
+	margin-right:5px;
+}
+
+// Text block
+.o-text-block{
+	max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display:block;
+}
+// Label Notify
+.o-label-notify{
+	@include gradient(#d54545,#f65959,#d54545,"");
+	padding:2px 3px;
+	font-size:9px;
+	color:#fff;
+	border:1px solid $oss-lightest;
+	border-radius:3px;
+	border:1px solid #fafafa;
+	font-weight:bold !important;
+}

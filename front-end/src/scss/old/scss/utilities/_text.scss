@@ -1,0 +1,52 @@
+////// TEST SIZE ////////
+.u-text-size--small{
+	font-size:80%;
+}
+////// COLOR TEXT ///////
+// Text color
+.u-text-light,.u-text-color--light{
+	color:$oss-light !important;
+}
+.u-text-dark{
+	color:$oss-dark;
+}
+.u-text-white{
+	color:#fff !important;
+}
+////// TEXT DECORATION ///////
+// Text Decoration
+.u-tunder{
+	text-decoration:underline;
+}
+.u-tuppercase{
+	text-transform:uppercase;
+}
+.u-titalic{
+	font-style:italic;
+}
+// Test size
+.u-size-14{
+	font-size:14px !important;
+}
+.u-size-16{
+	font-size: 16px;
+}
+.u-size-24{
+	font-size: 24px;
+}
+.u-size-36{
+	font-size:36px;
+}
+/////// TEST STYLE ////////
+.u-tbold{
+	font-weight:bold;
+}
+.u-tmedium,.u-text--medium{
+	font-weight:600;
+}
+.u-tlight{
+	font-weight:300;
+}
+.u-text--italic{
+	font-style:italic;
+}

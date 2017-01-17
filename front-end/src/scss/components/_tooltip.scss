@@ -1,0 +1,56 @@
+.tooltip{
+  .tooltip-inner{
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    color: #000000;
+  }
+  &.top .tooltip-arrow{
+    border-top-color: #ffffff;
+  }
+  &.left .tooltip-arrow{
+    border-left-color: #ffffff;
+  }
+  &.right .tooltip-arrow{
+    border-right-color: #ffffff;
+  }
+  &.bottom .tooltip-arrow{
+    border-bottom-color: #ffffff;
+  }
+}
+
+.error-tooltip + .tooltip{
+  > .tooltip-inner{
+    background-color: #f44336;
+    color: #ffffff;
+  }
+  &.top .tooltip-arrow{
+    border-top-color: #f44336;
+  }
+  &.left .tooltip-arrow{
+    border-left-color: #f44336;
+  }
+  &.right .tooltip-arrow{
+    border-right-color: #f44336;
+  }
+  &.bottom .tooltip-arrow{
+    border-bottom-color: #f44336;
+  }
+}
+.positive-tooltip + .tooltip{
+  > .tooltip-inner{
+    background-color: #8bc34a;
+    color: #ffffff;
+  }
+  &.top .tooltip-arrow{
+    border-top-color: #8bc34a;
+  }
+  &.left .tooltip-arrow{
+    border-left-color: #8bc34a;
+  }
+  &.right .tooltip-arrow{
+    border-right-color: #8bc34a;
+  }
+  &.bottom .tooltip-arrow{
+    border-bottom-color: #8bc34a;
+  }
+}

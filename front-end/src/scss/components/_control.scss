@@ -1,0 +1,42 @@
+.action-control{
+  padding-bottom: 0;
+  border-radius: $border-radius-base;
+  background-color: $action-control-background;
+  color: $action-control-color;
+  border: 1px solid $action-control-background;
+  padding: 10px 6px;
+  height: $control-height;
+  &:focus,&:hover {
+    border-color: $form-comtrol-border-color-hover;
+    box-shadow: none;
+    border-radius: $border-radius-base;
+  }
+  &:focus{
+    box-shadow: 0 5px 5px -4px rgba(2,169,243,0.5);
+    border-radius: $border-radius-base;
+  }
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &::-webkit-input-placeholder {
+    color: #bbb;
+    opacity: 1;
+  }
+
+  &:not(select) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+select.action-control{
+  padding-top: 3px;
+}
+
+.flat-control{
+  border: transparent;
+  width: 100%;
+  &:focus{
+    border: transparent;
+    box-shadow: none;
+  }
+}

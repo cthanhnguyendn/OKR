@@ -1,0 +1,30 @@
+.summary-progress-container{
+  display: flex;
+  .total-process{
+    width: 220px;
+  }
+  ul.progress-list{
+    flex: 1;
+    list-style: none;
+    padding-left: 0px;
+    li{
+      padding: 10px 0px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-bottom: 1px solid #eeeeee;
+      .progress{
+        margin-bottom: 0px;
+      }
+      span, .progress{
+        margin-right: 10px;
+        &:first-child{
+          flex: 1;
+        }
+      }
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+}

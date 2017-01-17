@@ -1,0 +1,230 @@
+/* Hao add customise */
+.select2-selection__choice{
+	max-width:100%;
+	overflow:hidden;
+}
+
+.mailsearch {
+	position: absolute;
+    background: #fff;
+    margin-top: 2px;
+    box-shadow: 0 3px 6px rgba(84, 101, 126, 0.16), 0 3px 6px rgba(84, 101, 126, 0.23) !important;
+    -webkit-box-shadow: 0 3px 6px rgba(84, 101, 126, 0.16), 0 3px 6px rgba(84, 101, 126, 0.23) !important;
+    border: 1px solid #cad3df;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#mailsearchoption {
+	max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:490px;
+    padding:20px;
+}
+.mailsearch ul.info {
+	width: 490px;
+    padding: 2px 5px;
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.mailsearch ul.info li{
+	padding:5px;
+	cursor: pointer;
+}
+.mailsearch ul.info li:hover {
+	background: #ECEFF1;	
+}
+.mailsearch img {		
+    height: 32px;
+    width: 32px;
+    display: inline;
+    margin-right: 10px;
+    margin-top: 6px;
+    float:left;
+}
+.searchfilter .searchoption {
+	width: 100%;
+	margin-bottom:10px;
+}
+.searchfilter .format{
+	width: 100%;
+    border: 1px solid #cad3df;
+    border-radius: 4px;
+    padding: 5px;	
+}
+.searchfilter .c-informbtn{
+	width:15px;
+}
+.searchfilter label {
+	display: block;
+}
+.searchfilter .end i {
+	padding: 6px 10px;   
+    color: #fff;
+    margin: 5px 0px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.searchfilter span{
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.searchfilter .end{
+	margin-top:40px;
+}
+.searchfilter .select2-search input{
+	height: 22px !important;
+}
+.jstree-themeicon-custom { background-size:20px 20px !important; }
+.fa-sort-desc.form-control-feedback {
+	right: 35px;
+    background: #ffffff;
+    color: #cccccc;
+    width: 20px;
+    font-size: 12px;
+    cursor: pointer !important;
+    pointer-events: all; 
+    line-height: 30px;
+    display: inline-block;
+    height: 95%;
+    margin-top: 1px;
+}
+
+.fa-sort-desc.form-control-feedback:hover{
+	color:#57606D;
+}
+
+/* CSS model Label and Filter */
+.createlabel .title {
+	padding: 20px 20px 0px;
+	font-size: 24px;
+    font-weight: lighter;
+}
+
+
+.modal-vertical-centered {
+  transform: translate(0, 50%) !important;
+  -ms-transform: translate(0, 50%) !important;
+  -webkit-transform: translate(0, 50%) !important;
+}
+
+.createlabel .body{
+	padding:10px 20px;
+	overflow: hidden;
+}
+
+.createlabel label{
+	color: #54657e;
+}
+
+.createlabel input{
+	width: 100%;
+    border: 1px solid #cad3df;
+    border-radius: 4px;
+    padding: 5px;
+}
+.createlabel .footer{
+	overflow:hidden;
+	padding: 10px 20px;
+	
+}
+.createlabel .footer i {
+	padding: 6px 10px;   
+    color: #fff;
+    margin: 5px 0px;
+    cursor: pointer;
+    border-radius: 3px;   
+}
+.createlabel .footer span{
+	 font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	 color:#fff;
+}
+
+/** update css leftside menu **/
+ul.treeview-menu li{
+	cursor: pointer;
+}
+ul.treeview-menu li:hover{
+	background: #cad3df;
+    border-radius: 15px;    
+} 
+
+ul.treeview-menu li .fa-caret-down{
+	display:none;
+}
+
+ul.treeview-menu li:hover .fa-caret-down{
+	display:block;
+	float: right;
+    line-height: 30px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size:18px;
+    color: #54657e !important;
+}
+.labeloption{
+	cursor:pointer;
+	text-align: center;
+	padding:2px 5px;
+}
+.labeloption:hover{
+	background:#ccc;
+}
+
+.labelgreen{
+	background:#4caf50 !important; padding: 8px 9px !important; color: #fff !important;
+}
+.labelgreen:hover{
+	background:#43a047 !important;
+}
+.labelgreen:focus{
+	background:#388e3c !important;
+}
+
+.labelblue{
+	background:#03a9f4 !important; padding: 8px 9px !important; color: #fff !important;
+}
+
+.labelblue:hover{
+	background:#039be5 !important;
+}
+.labelblue:focus{
+	background:#0288d1 !important;
+}
+.labeldark{
+	background:#455a64 !important; margin-left:10px !important; padding: 8px 9px !important; color: #fff !important;
+}
+.labeldark:hover{
+	background:#37474f !important;
+}
+.labeldark:focus{
+	background:#263238 !important;
+}
+.mailbox-controls .dropdown {
+	display: inline-block;
+}
+
+.dropdown.movetolabel ul {
+	padding:0px;	
+}
+
+.dropdown.movetolabel li{
+	padding: 5px 10px 0px;
+}
+
+.dropdown.movetolabel ul span{
+	padding: 5px 10px;
+	display: inline-block;
+}
+
+.dropdown.movetolabel li:last-child{
+	border-top: 1px solid #ccc;
+	cursor: pointer;
+	padding: 5px 35px;
+}
+
+.dropdown.movetolabel li:last-child:hover{
+	background:#f5f5f5;
+}

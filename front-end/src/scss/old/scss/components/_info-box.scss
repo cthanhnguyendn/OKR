@@ -1,0 +1,102 @@
+/*
+ * Component: Info Box
+ * -------------------
+ */
+.info-box {
+	display: block;
+	min-height: 92px;
+	background: #fff;
+	width: 100%;
+	// Quy modify
+	border:1px solid $oss-lightest;
+	@include border-radius(3px,3px,3px,3px);
+	&.has-border{
+		border-color: $oss-lighter;
+	}
+	margin-bottom: 15px;
+	small {
+		font-size: 14px;
+	}
+	.progress {
+		background: rgba(0, 0, 0, .2);
+		margin: 5px -10px 5px -10px;
+		height: 2px;
+		&,
+		& .progress-bar {
+			@include border-radius(0,0,0,0);
+		}
+		.progress-bar {
+			background: #fff;
+		}
+	}
+	// When is used to be report
+	&.is-report{
+		position: relative;
+	    height: 100%;
+	    overflow: hidden;
+	    // Force children height equal to parent height
+		.info-box-content{
+			height: 100%;
+		    position: absolute;
+		    width: auto;
+		    top: 0;
+		    left: 0;
+		}
+		.info-box-text{
+			white-space:normal;
+			text-transform:none;
+		}
+		// When hover
+		&:hover,&:active,&:focus{
+			border-color: $oss-blue;
+			@extend %transition;
+		}
+	}
+}
+
+.info-box-icon {
+	@include border-radius(2px, 0, 2px, 0);
+	display: block;
+	float: left;
+	height: 90px;
+	width: 90px;
+	text-align: center;
+	font-size: 45px;
+	line-height: 90px;
+	background-color: $oss-lightest;
+	> img {
+		max-width: 100%;
+	}
+}
+
+.info-box-content {
+	padding: 5px 10px;
+	margin-left: 90px;
+}
+
+.info-box-number {
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.progress-description,
+.info-box-text {
+	display: block;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.info-box-text {
+	text-transform: uppercase;
+}
+
+.info-box-more {
+	display: block;
+}
+
+.progress-description {
+	margin: 0;
+}

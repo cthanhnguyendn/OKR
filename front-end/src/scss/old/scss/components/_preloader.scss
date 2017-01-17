@@ -1,0 +1,47 @@
+.o-preloader-oss{
+    position:relative;
+   	&:before{
+   		width:20px;
+	    height:20px;
+	    border-radius:20px;
+	    content:'';
+	    position:absolute;
+	    background:#ffa70f;
+	    animation: preloader_3_before .7s infinite ease-in-out;
+	    z-index:999;
+   	}
+   	&:after{
+   		width:20px;
+	    height:20px;
+	    border-radius:20px;
+	    content:'';
+	    position:absolute;
+	    background:#b6ce25;
+	    left:22px;
+	    animation: preloader_3_after .7s infinite ease-in-out;
+	    z-index:1000;
+	}
+	@keyframes preloader_3_before {
+	    0% {transform: translateX(0px) rotate(0deg)}
+	    15%	{z-index:1000}
+	    50% {transform: translateX(22px)}
+	    100% {transform: translateX(0px) rotate(0deg)}
+	}
+	@keyframes preloader_3_after {
+	    0% {transform: translateX(0px)}
+	    15% {z-index:999}
+	    50% {transform: translateX(-23px)}
+	    100% {transform: translateX(0px)}
+	}
+}
+// Spinner
+.o-spinner{
+	background: url('images/spin.svg');
+	height:36px;
+	width:36px;
+	position:relative;
+	display:block;
+	&:after{
+		content: ' ';
+	}
+}

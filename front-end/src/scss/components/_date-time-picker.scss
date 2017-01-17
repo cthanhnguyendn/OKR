@@ -1,0 +1,80 @@
+.datepicker.dropdown-menu, .daterangepicker.dropdown-menu{
+  //border-radius: 0px;
+  //padding: 10px;
+  table{
+    //border-collapse: collapse;
+    //border: none;
+    thead{
+      th{
+        background: transparent;
+      }
+      //tr:nth-child(2){
+      //  th{
+      //    padding: 0;
+      //    font-size: 10px;
+      //    text-align: center;
+      //    color: #9e9e9e;
+      //    font-weight: normal;
+      //    width: inherit;
+      //    height: inherit;
+      //  }
+      //}
+    }
+    //tbody{
+    //  tr{
+    //    td{
+    //      width: 30px;
+    //      height: 30px;
+    //      border: 1px solid #9e9e9e;
+    //      border-radius: 0px;
+    //    }
+    //    td.day{
+    //      &:hover,&:focus{
+    //        background-color: #03a9f4;
+    //      }
+    //    }
+    //  }
+    //}
+    thead, tbody, tfoot{
+      tr:nth-child(even){
+        background: transparent;
+      }
+    }
+  }
+}
+.datepicker{
+  z-index: 100;
+}
+.daterangepicker.dropdown-menu{
+  .ranges{
+    float: none;
+    display: block;
+    clear: both;
+    .range_inputs{
+      display: flex;
+      .daterangepicker_start_input,.daterangepicker_end_input{
+        display: flex;
+        align-items: center;
+        input.input-mini{
+          @extend .action-control;
+          margin: 0px;
+        }
+      }
+      .applyBtn{
+        @extend .btn;
+        height: 30px;
+        margin-left: 10px;
+      }
+      .cancelBtn, .btn-default{
+        @extend .btn-accept;
+        height: 30px;
+        margin-left: 10px;
+      }
+    }
+    .daterangepicker_start_input label,.daterangepicker_end_input label{
+      width: 36px;
+
+    }
+
+  }
+}

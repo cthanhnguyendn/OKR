@@ -1,0 +1,128 @@
+/*
+ * Component: Alert
+ * ----------------
+ */
+
+.alert {
+  @include border-radius(3px,3px,3px,3px);
+  h4 {
+    font-weight: 600;
+  }
+  .icon {
+    margin-right: 10px;
+  }
+  .close {
+    color: #000;
+    @include opacity(.2);
+    &:hover {
+      @include opacity(.5);
+    }
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+//Alert Variants
+.alert-success {
+  background: rgba(76, 175, 80,.15);
+  border-color: $oss-green;
+  p{
+    color:$oss-green;
+  }
+}
+
+.alert-danger,
+.alert-error {
+  background: rgba(210, 51, 92,.15);
+  border-color: $oss-red;
+  p{
+    color:$oss-red;
+  }
+}
+
+.alert-warning {
+  @extend .bg-yellow;
+  border-color: darken($yellow, 5%);
+}
+
+.alert-info {
+  background: rgba(0, 130, 213,.15);
+  border-color: $oss-blue;
+  p{
+    color:$oss-blue;
+  }
+}
+.alert-default{
+  background: $oss-gray;
+  border-color: $oss-bold;
+  p{
+    color:$oss-lightest;
+  }
+}
+// Alert components
+.c-alert{
+  margin:0px;
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width: 300px;
+  max-width:320px;
+  z-index:1090;
+  padding:5px 5px 5px 10px;
+  // Add shadow
+  @extend .o-shadow4;
+  // Paragraph on table
+  p{
+    margin:0px;
+  }
+  .c-alert-box{
+    display:table;
+     .c-alert-icon,.c-alert-content,.c-alert-action{
+        display:table-cell;
+        vertical-align: middle;
+        text-align: left;
+        padding:0px 7px
+     }
+     .c-alert-icon{
+        padding-left:0px;
+        font-size:3.5rem;
+     }
+     .c-alert-action{
+      padding-right:0px;
+     }
+  }
+  // REmove box button
+  .c-alert-remove{
+      position:absolute;
+      cursor: pointer;
+      top:7px;
+      right:7px;
+      color:lighten($oss-lighter,3%);
+      opacity:0.2;
+      &:hover{
+        color:$oss-lighter;
+        @extend %transition;
+        opacity:1;
+      }
+  }
+  // Error, danger
+  &.is-danger{
+    .c-alert-icon{
+      color:$oss-red;
+    }
+  }
+  // Success
+  &.is-success{
+    .c-alert-icon{
+      color:$oss-green;
+    }
+  }
+  // Notification
+  &.is-notify{
+    .c-alert-icon{
+      color:$oss-lightest;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// Stylesheet for OSS Documents
+// Header
+.c-docs-header{
+	color:#fff;
+	margin-bottom:15px;
+	position:relative;
+	height:210px;
+	overflow:hidden;
+    .c-docs-header__images{
+    	// Getting random bg image from unplash
+    	background-image:url('https://unsplash.it/1920/768/?random');
+    	background-attachment:fixed;
+    	background-size: cover;
+    	background-position:center center;
+		display: block;
+		// Blur effect
+	    filter: blur(2px);
+	    -webkit-filter: blur(2px);
+	    height:210px;
+	    left: 0;
+		position: absolute;
+		right: 0;
+		top:0;
+		z-index: 1;
+    }
+	.o-overplay{
+		padding-top:30px;
+		padding-bottom:30px;
+		z-index: 2;
+		position:absolute;
+		top:0;left:0;
+		width:100%;
+		height:100%;
+	}
+	h1,p{
+		margin-left:30px;
+	}
+	h1{
+		margin-bottom: 15px;
+		font-weight:700;
+		letter-spacing: -1px;
+		line-height:1;
+		text-shadow: 0 1px 0 rgba(0,0,0,.1);
+		font-size:42px;
+	}
+	p{
+		font-size:24px;
+		line-height:1.4;
+		margin-right: 380px;
+		color:lighten($oss-lighter,4%);
+	}
+}
+// Overplay
+.o-overplay{
+	background:rgba(55,67,85,0.4);
+}

@@ -1,0 +1,98 @@
+/*!
+ *   AdminLTE edited by Quy Pham
+ *   Author: Quy Pham
+ *	 Website: http://quypham.co
+ *   License: Open source - MIT
+ *   Version: 1.0.112
+!*/
+//google fonts//
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+@import "../bootstrap/scss/_bootstrap.scss";
+// //----
+@import "variables";
+@import "core";
+@import "mixins";
+@import "miscellaneous";
+// // OBJECT
+// // -----------
+@import "object";
+// // KEYFRAMES
+// // -----------
+// //COMPONENTS
+// //-----------
+@import "components/header";
+@import "components/sidebar";
+@import "components/sidebar-mini";
+@import "components/control-sidebar";
+@import "components/dropdown";
+@import "components/forms";
+@import "components/progress-bars";
+@import "components/small-box";
+@import "components/boxes";
+@import "components/info-box";
+@import "components/timeline";
+@import "components/vertical-timeline";
+@import "components/buttons";
+@import "components/callout";
+@import "components/alerts";
+@import "components/navs";
+@import "components/products";
+@import "components/table";
+@import "components/labels";
+@import "components/direct-chat";
+@import "components/users-list";
+@import "components/carousel";
+@import "components/modal";
+@import "components/social-widgets";
+// //MODULE
+// //------
+@import "pages/lockscreen";
+@import "pages/login_and_register";
+@import "pages/404_500_errors";
+@import "pages/invoice";
+@import "pages/profile";
+@import "pages/docs";
+@import "pages/contact";
+@import "pages/timekeeping";
+@import "pages/user-profile";
+@import "pages/pos";
+// //Plugins
+// //--------
+@import "plugins/bootstrap-social";
+@import "plugins/fullcalendar";
+// //Miscellaneous
+// //-------------
+// @import "miscellaneous.less";
+@import "print";
+@import "skins/all-skins";
+// Inport outside jquery plugin css
+@import "plugins/webui-popover/jquery.webui-popover"; // Webui popover
+@import "plugins/jstree/jstree"; //jstree
+@import "plugins/select2/select2"; // select2
+@import "plugins/bootstrap-table/bootstrap-table"; //bootstrap table by wenzhixin
+@import "plugins/daterangepicker/daterangepicker-bs3"; //Daterangepicker
+@import "plugins/daterangepicker/daterangepicker"; // Daterangepicker
+@import "plugins/bootstrap-select/bootstrap-select"; // Bootstrap Select
+@import "plugins/galleria/galleria.classic"; // Bootstrap Selec
+
+// Customize components - OSS
+@import "components/newsfeed";
+@import "components/mail";
+@import "components/preloader";
+@import "components/reset"; // Reset html object
+
+// Responsive
+@import "responsive";
+// Utilities
+@import  "utilities";
+// Animate
+@import "animate";
+@import "custome/feedback";
+@import "custome/feedbackManager";
+@import "custome/react-select.min";
+@import "custome/datepicker";
+@import "custome/image-gallery";
+@import "custome/react-datepicker.min";
+@import "custome/notify";
+@import "email/searchHeader";
+@import "email/telegramguide";

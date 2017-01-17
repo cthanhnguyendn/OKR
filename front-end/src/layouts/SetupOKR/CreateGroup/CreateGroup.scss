@@ -1,0 +1,35 @@
+.create-group-user{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-radius: 5px;
+  .group-user-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+  }
+  .right-info-block{
+    flex: 1;
+    min-height: 60px;
+    .user-full-name{
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .group-lead{
+      color: #ffc107;
+    }
+  }
+  >*{
+    margin: 0px 10px;
+  }
+  &:hover{
+    background-color: #f5f5f5;
+    .fa-times{
+      display: inline-block;
+    }
+  }
+  .fa-times{
+    display: none;
+  }
+
+}

@@ -1,0 +1,64 @@
+/*
+ * Skin for OSS Seedcom
+ *
+*/
+.skin-oss{
+	// Navbar
+	.main-header{
+		@include navbar-variant($oss-gray,#fff);
+		@extend %dark-gray-gradient;
+		// Quy modify - Adding shadow on main-header
+		@extend .o-shadow1;
+		.navbar{
+			margin-bottom:0px;
+			.sidebar-toggle{
+				color:#fff;
+				&:hover {
+		          background-color: darken($oss-gray, 5%);
+		        }
+			}
+			// Quy modified
+			.c-toggle-btn{
+				color:#fff;
+				&:hover{
+					background-color: darken($oss-gray, 5%);
+				}
+			}
+			@media(max-width:$screen-header-collapse) {
+				.dropdown-menu{
+					li{
+						&.divivder{
+							background-color: rgba(255, 255, 255, 0.1);
+						}
+					a{
+						color: #fff;
+						&:hover{
+							background: darken($oss-gray,5%);
+							color:#fff;
+						}
+					}
+					}
+				}
+			}
+		}
+	// logo
+	.logo{
+		color:#fff;
+		// @include logo-variant($oss-gray);
+		// @extend %dark-gray-gradient;
+		// box-shadow:3px 2px 2px rgba(0,0,0,0.4);
+	}
+	li.user-header{
+		background-color: $oss-gray;
+	}
+	}
+// Content Header
+.content-header{
+		background: transparent;
+	}
+// Create the sidebarskin
+	 @include skin-light-oss-sidebar($oss-gray);
+}
+.skin-oss.layout-top-nav .main-header > .logo {
+  @include logo-variant($oss-gray);
+}

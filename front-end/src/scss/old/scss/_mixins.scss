@@ -1,0 +1,461 @@
+//AdminLTE mixins
+//===============
+
+//Changes the color and the hovering properties of the navbar
+@mixin navbar-variant($color, $font-color: rgba(255, 255, 255, 0.8), $hover-color: #f6f6f6, $hover-bg: rgba(0, 0, 0, 0.1)) {
+	background-color: $color;
+	//Navbar links
+	.nav > li > a {
+		color: $oss-light;
+	}
+
+	.nav > li > a:hover,
+	.nav > li > a:active,
+	.nav > li > a:focus,
+	.nav .open > a,
+	.nav .open > a:hover,
+	.nav .open > a:focus,
+	.nav > .active > a {
+		@include transition($transition-speed $transition-fn all);
+		background: $hover-bg;
+		color: $hover-color;
+	}
+
+	//Add color to the sidebar toggle button
+	.sidebar-toggle {
+		color: $font-color;
+		&:hover {
+			color: $hover-color;
+			background: $hover-bg;
+		}
+	}
+}
+
+//Logo color variation
+@mixin logo-variant($bg-color, $color: #fff, $border-bottom-color: transparent, $border-bottom-width: 0) {
+	background-color: $bg-color;
+	color: $color;
+	border-bottom: $border-bottom-width solid $border-bottom-color;
+
+	&:hover {
+		background-color: darken($bg-color, 1%);
+	}
+}
+
+//Box solid color variantion creator
+@mixin box-solid-variant($color, $text-color: #fff) {
+	border: 1px solid $color;
+	> .box-header {
+		color: $text-color;
+		background: $color;
+		background-color: $color;
+		a,
+		.btn {
+			color: $text-color;
+		}
+	}
+}
+
+//Direct Chat Variant
+@mixin direct-chat-variant($bg-color, $color: #fff) {
+	.right > .direct-chat-text {
+		background: $bg-color;
+		border-color: $bg-color;
+		color: $color;
+		&:after,
+		&:before {
+			border-left-color: $bg-color;
+		}
+	}
+}
+
+//Different radius each side
+@mixin border-radius($top-left, $top-right, $bottom-left, $bottom-right)
+{
+	border-top-left-radius: $top-left;
+	border-top-right-radius: $top-right;
+	border-bottom-right-radius: $bottom-right;
+	border-bottom-left-radius: $bottom-left;
+}
+
+//Gradient background
+@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF, $important:"") {
+	background: $color;
+	background: -webkit-gradient(linear,left bottom,left top,color-stop(0, $start),color-stop(1, $stop)) unquote($important);
+	background: -ms-linear-gradient(bottom,$start,$stop) unquote($important);
+	background: -moz-linear-gradient(center bottom, $start 0%, $stop 100%) unquote($important);
+	background: -o-linear-gradient($stop, $start) unquote($important);
+	//filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$stop,$start)) unquote($important);
+}
+
+//Added 2.1.0
+//Skins Mixins
+
+//Dark Sidebar Mixin
+@mixin skin-dark-sidebar($link-hover-border-color) {
+	// Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+	.wrapper,
+	.main-sidebar,
+	.left-side {
+		background-color: $sidebar-dark-bg;
+	}
+	//User Panel (resides in the sidebar)
+	.user-panel {
+		> .info, > .info > a {
+			color: #fff;
+		}
+	}
+	//Sidebar Menu. First level links
+	.sidebar-menu > li {
+		//Section Headning
+		&.header {
+			color: lighten($sidebar-dark-bg, 20%);
+			background: darken($sidebar-dark-bg, 4%);
+		}
+		//links
+		> a {
+			border-left: 3px solid transparent;
+		}
+		//Hover and active states
+		&:hover > a, &.active > a {
+			color: $sidebar-dark-hover-color;
+			background: $sidebar-dark-hover-bg;
+			border-left-color: $link-hover-border-color;
+		}
+		//First Level Submenu
+		> .treeview-menu {
+			margin: 0 1px;
+			background: $sidebar-dark-submenu-bg;
+		}
+	}
+	//All links within the sidebar menu
+	.sidebar a {
+		color: $sidebar-dark-color;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	//All submenus
+	.treeview-menu {
+		> li {
+			> a {
+				color: $sidebar-dark-submenu-color;
+			}
+			&.active > a, > a:hover {
+				color: $sidebar-dark-submenu-hover-color;
+			}
+		}
+	}
+	//The sidebar search form
+	.sidebar-form {
+		@include border-radius(3px,3px,3px,3px);
+		border: 1px solid lighten($sidebar-dark-bg, 10%);
+		margin: 10px 10px;
+		input[type="text"], .btn {
+			box-shadow: none;
+			background-color: lighten($sidebar-dark-bg, 10%);
+			border: 1px solid transparent;
+			height: 35px;
+			@include transition(all $transition-speed $transition-fn);
+		}
+		input[type="text"] {
+			color: #666;
+			@include border-radius(2px, 0, 2px, 0);
+			&:focus, &:focus + .input-group-btn .btn {
+				background-color: #fff;
+				color: #666;
+			}
+			&:focus + .input-group-btn .btn {
+				border-left-color: #fff;
+			}
+		}
+		.btn {
+			color: #999;
+			@include border-radius(0, 2px, 0, 2px);
+		}
+	}
+}
+//Light Sidebar Mixin
+@mixin skin-light-sidebar($icon-active-color) {
+	// Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+	.wrapper,
+	.main-sidebar,
+	.left-side {
+		background-color: $sidebar-light-bg;
+	}
+	.content-wrapper,
+	.main-footer {
+		border-left: 1px solid $gray;
+	}
+	//User Panel (resides in the sidebar)
+	.user-panel {
+		> .info, > .info > a {
+			color: $sidebar-light-color;
+		}
+	}
+	//Sidebar Menu. First level links
+	.sidebar-menu > li {
+		@include transition(border-left-color .3s ease);
+		//border-left: 3px solid transparent;
+		//Section Headning
+		&.header {
+			color: lighten($sidebar-light-color, 25%);
+			background: $sidebar-light-bg;
+		}
+		//links
+		> a {
+			border-left: 3px solid transparent;
+			font-weight: 600;
+		}
+		//Hover and active states
+		&:hover > a,
+		&.active > a {
+			color: $sidebar-light-hover-color;
+			background: $sidebar-light-hover-bg;
+		}
+		&:hover > a {
+
+		}
+		&.active {
+			border-left-color: $icon-active-color;
+			> a {
+				font-weight: 600;
+			}
+		}
+		//First Level Submenu
+		> .treeview-menu {
+			background: $sidebar-light-submenu-bg;
+		}
+	}
+	//All links within the sidebar menu
+	.sidebar a {
+		color: $sidebar-light-color;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	//All submenus
+	.treeview-menu {
+		> li {
+			> a {
+				color: $sidebar-light-submenu-color;
+			}
+			&.active > a,
+			> a:hover {
+				color: $sidebar-light-submenu-hover-color;
+			}
+			&.active > a {
+				font-weight: 600;
+			}
+		}
+	}
+	//The sidebar search form
+	.sidebar-form {
+		@include border-radius(3px,3px,3px,3px);
+		border: 1px solid $gray; //darken($sidebar-light-bg, 5%);
+		margin: 10px 10px;
+		input[type="text"],
+		.btn {
+			box-shadow: none;
+			background-color: #fff; //darken($sidebar-light-bg, 3%);
+			border: 1px solid transparent;
+			height: 35px;
+			@include transition(all $transition-speed $transition-fn);
+		}
+		input[type="text"] {
+			color: #666;
+			@include border-radius(2px, 0, 2px, 0);
+			&:focus,
+			&:focus + .input-group-btn .btn {
+				background-color: #fff;
+				color: #666;
+			}
+			&:focus + .input-group-btn .btn {
+				border-left-color: #fff;
+			}
+		}
+		.btn {
+			color: #999;
+			@include border-radius(0, 2px, 0, 2px);
+		}
+	}
+	@media (min-width: $screen-sm-min) {
+		&.sidebar-mini.sidebar-collapse {
+			.sidebar-menu > li > .treeview-menu {
+				border-left: 1px solid $gray;
+			}
+		}
+	}
+}
+
+// Border
+@mixin border-corner($border-top-px,$border-right-px,$border-bottom-px,$border-left-px,$values,$color){
+	border-top:$border-top-px $values $color;
+	border-right:$border-right-px $values $color;
+	border-bottom:$border-bottom-px $values $color;
+	border-left:$border-left-px $values $color;
+}
+
+// Skin light OSS Sidebar
+@mixin skin-light-oss-sidebar($icon-active-color){
+	 // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
+	.wrapper,
+	.main-sidebar,
+	.left-side {
+		background-color: $sidebar-oss-light-bg;
+	}
+	//User Panel (resides in the sidebar)
+	.user-panel {
+		> .info, > .info > a {
+			color: $sidebar-oss-light-color;
+		}
+	}
+	//Sidebar Menu. First level links
+	.sidebar-menu > li {
+		@include transition(border-left-color .3s ease);
+		//border-left: 3px solid transparent;
+		//Section Headning
+		&.header {
+			color: lighten($sidebar-oss-light-color, 25%);
+			background: $sidebar-oss-light-bg;
+		}
+		//links
+		> a {
+			border-left: 3px solid transparent;
+			font-weight: 600;
+		}
+		//Hover and active states
+		&:hover > a,
+		&.active > a {
+			color: $sidebar-oss-light-hover-color;
+			background: $sidebar-oss-light-hover-bg;
+		}
+		&:hover > a {
+		}
+		&.active {
+			border-left-color: $icon-active-color;
+			> a {
+				font-weight: 600;
+			}
+		}
+		//First Level Submenu
+		> .treeview-menu {
+			background: $sidebar-oss-light-submenu-bg;
+		}
+	}
+	//All links within the sidebar menu
+	.sidebar a {
+		color: $sidebar-oss-light-color;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	//All submenus
+	.treeview-menu {
+		> li {
+			> a {
+				color: $sidebar-oss-light-submenu-color;
+			}
+			&.active > a,
+			> a:hover {
+				color: $sidebar-oss-light-submenu-hover-color;
+
+			}
+			&.active > a {
+				font-weight: 600;
+			}
+		}
+	}
+	//The sidebar search form
+	.sidebar-form {
+		@include border-radius(3px,3px,3px,3px);
+		border: 1px solid $gray; //darken($sidebar-light-bg, 5%);
+		margin: 10px 10px;
+		input[type="text"],
+		.btn {
+			box-shadow: none;
+			background-color: #fff; //darken($sidebar-light-bg, 3%);
+			border: 1px solid transparent;
+			height: 35px;
+			@include transition(all $transition-speed $transition-fn);
+		}
+		input[type="text"] {
+			color: #666;
+			@include border-radius(2px, 0, 2px, 0);
+			&:focus,
+			&:focus + .input-group-btn .btn {
+				background-color: #fff;
+				color: #666;
+			}
+			&:focus + .input-group-btn .btn {
+				border-left-color: #fff;
+			}
+		}
+		.btn {
+			color: #999;
+			@include border-radius(0, 2px, 0, 2px);
+		}
+	}
+	@media (min-width: $screen-sm-min) {
+		&.sidebar-mini.sidebar-collapse {
+			.sidebar-menu > li > .treeview-menu {
+				border-left: 1px solid $gray;
+			}
+		}
+	}
+}
+
+// EXTEND
+
+// Smooth Hover Transition
+%transition{
+	@include transition($transition-speed $transition-fn all);
+}
+// Gradient motion
+%gradient-motion{
+	$time:10s;
+	-webkit-animation: gradient-motion $time ease infinite;
+	-moz-animation: gradient-motion $time ease infinite;
+	animation: gradient-motion $time ease infinite;
+
+	@-webkit-keyframes gradient-motion {
+	    0%{background-position:90% 0%}
+	    50%{background-position:11% 100%}
+	    100%{background-position:90% 0%}
+	}
+	@-moz-keyframes gradient-motion {
+	    0%{background-position:90% 0%}
+	    50%{background-position:11% 100%}
+	    100%{background-position:90% 0%}
+	}
+	@keyframes gradient-motion {
+	    0%{background-position:90% 0%}
+	    50%{background-position:11% 100%}
+	    100%{background-position:90% 0%}
+	}
+}
+// OSS Color Gradient //
+%blue-gradient{
+	@include gradient($oss-blue,$oss-blue,#0f9be4,"");
+}
+%orange-gradient{
+	@include gradient($oss-orange,$oss-orange,#ffa70f,"");
+}
+%red-gradient{
+	@include gradient($oss-red,$oss-red,#E14C74,"");
+}
+%green-gradient{
+	@include gradient($oss-green,$oss-green,#5bbe5f,"");
+}
+%banana-gradient{
+	@include gradient($oss-banana,$oss-banana,#b6ce25,"");
+}
+%light-gradient{
+	@include gradient(#f5f5f5,#f5f5f5,#fafafa,"");
+}
+%dark-gray-gradient{
+	@include gradient(#535c69,#535c69,#5D6673,"");
+}
+%light-gray-gradient{
+	@include gradient(#8493A8,#8493A8,#93ACB7,"");
+}

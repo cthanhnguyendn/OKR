@@ -1,0 +1,122 @@
+/*
+ * Component: modal
+ * ----------------
+ */
+.modal {
+  background: rgba(0, 0, 0, .3);
+  .modal-body{
+    padding-bottom: 0px
+  }
+  .modal-footer {
+    border-top: none;
+  }
+}
+
+.modal-dialog {
+  width: 500px;
+}
+
+.modal.simple {
+  .modal-dialog {
+    width: 400px;
+    .modal-footer {
+      text-align: right;
+    }
+  }
+}
+
+.modal.alert {
+  .modal-dialog {
+    width: 300px;
+    .p {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: center;
+      color: #37474f;
+    }
+  }
+  .modal-body{
+    padding: 30px 30px 0px 30px;
+    p{
+      text-align: center;
+    }
+  }
+  .modal-footer {
+    text-align: center;
+  }
+}
+
+.modal-content {
+  @include border-radius(5,5,5,5);
+  @include box-shadow(0 0 10px 0 rgba(0, 0, 0, 0.25));
+  border: 0;
+  @media (min-width: $screen-sm-min) {
+    @include box-shadow(0 0 10px 0 rgba(0, 0, 0, 0.25));
+  }
+}
+
+.modal-header {
+  border-bottom-color: $box-border-color;
+}
+
+.modal-footer {
+  border-top-color: $box-border-color;
+}
+
+//Modal variants
+.modal-primary {
+  .modal-body {
+    @extend .bg-light-blue;
+  }
+  .modal-header,
+  .modal-footer {
+    @extend .bg-light-blue-active;
+    border-color: darken($light-blue, 10%);
+  }
+}
+
+.modal-warning {
+  .modal-body {
+    @extend .bg-yellow;
+  }
+  .modal-header,
+  .modal-footer {
+    @extend .bg-yellow-active;
+    border-color: darken($yellow, 10%);
+  }
+}
+
+.modal-info {
+  .modal-body {
+    @extend .bg-aqua;
+  }
+  .modal-header,
+  .modal-footer {
+    @extend .bg-aqua-active;
+    border-color: darken($aqua, 10%);
+  }
+}
+
+.modal-success {
+  .modal-body {
+    @extend .bg-green;
+  }
+  .modal-header,
+  .modal-footer {
+    @extend .bg-green-active;
+    border-color: darken($green, 10%);
+  }
+}
+
+.modal-danger {
+  .modal-body {
+    @extend .bg-red;
+  }
+  .modal-header,
+  .modal-footer {
+    @extend .bg-red-active;
+    border-color: darken($red, 10%);
+  }
+}

@@ -1,0 +1,295 @@
+// Utilities
+@import "spacing";
+@import "text";
+// None List style
+.u-non-list{
+	list-style:none;
+}
+// Blocks
+.u-block{
+	display:block !important;
+}
+.u-hidden{
+	display:none;
+}
+// Vertical resize form
+.u-v-resize{
+	resize:vertical;
+}
+.u-none-resize{
+	resize:none;
+}
+
+////// ALIGN ///////
+// Text center
+.u-tcenter, .u-text-align--center{
+	text-align:center;
+}
+// Text left
+.u-tleft, .u-text-align--left{
+	text-align:left;
+}
+// Text right
+.u-tright, .u-text-align--right{
+	text-align:right;
+}
+.u-vmiddle{
+	vertical-align:middle;
+}
+// Float
+.u-fright{
+	float:right;
+}
+.u-fleft{
+	float:left;
+}
+
+////// COLOR BACKGROUND ///////
+// Color gradient
+.u-bg-gr-gradient, .u-bg-color-gra--green{
+	@extend %green-gradient;
+	color:#fff;
+}
+.u-bg-color-gra--orange{
+	@extend %orange-gradient;
+	color:#fff;
+}
+.u-bg-utu-gradient, .u-bg-color-gra--utu{
+	@include gradient(#e52c27,#c1181d,#e52c27,"");
+}
+.u-bg-red-gradient, .u-bg-color-gra--red{
+	@include gradient(#d54545,#f65959,#d54545,"");
+}
+// Color background
+.u-whitebg{
+	background-color:#fff;
+}
+.u-lightbg, .u-bg--lightest{
+	background-color:$oss-lightest;
+}
+.u-background--dark{
+	background-color:$oss-dark !important;
+}
+
+////// WIDTH & HIGHT ///////
+// Force width
+.u-fullwidth, .u-width--full{
+	width:100% !important;
+}
+// Force height
+.u-fullheight, .u-height--full{
+	height:100% !important;
+}
+.u-height--auto{
+	height: auto !important;
+}
+////// BORDER ///////
+// Border
+.u-bborder{
+	border-bottom: 1px solid lighten($oss-lighter,4%);
+	margin-top:10px;
+	padding-bottom:10px;
+	&:first-child{
+		margin:0px;
+	}
+}
+.u-tborder-0{
+	border-top:0px !important;
+}
+.u-lborder-1{
+	border-left:1px solid $oss-lighter;
+}
+.u-no-border{
+	border:0px;
+}
+.u-dash-border--top-x{
+	border-top:2px dashed $oss-lighter;
+}
+// Color border
+.u-border--red{
+	border-color:$oss-red !important;
+}
+.u-border--banana{
+	border-color: $oss-banana !important;
+}
+////// Shadow ///////
+.u-no-shadow{
+	box-shadow:none;
+}
+////// TABLE ///////
+// Table display
+.u-dtable{
+	display:table !important;
+	.u-dtable-cell,.u-dtable-cell--top,.u-dtable--bottom{
+		display:table-cell !important;
+	}
+	// Middle - Default
+	.u-dtable-cell{
+		vertical-align: middle;
+	}
+	// Top
+	.u-dtable-cell--top{
+		vertical-align: top;
+	}
+	// Bottom
+	.u-dtable-cell-bottom, .u-dtable-cell--bottom{
+		vertical-align: bottom;
+	}
+}
+.u-tablelast-right{
+	tr{
+		td:last-child{
+			text-align:right;
+		}
+	}
+}
+// List inline
+.u-listinline, .u-list--inline{
+	list-style:none;
+	li{
+		display:inline-block
+	}
+}
+// Display inline-block
+.u-inline-block{
+	display: inline-block;
+}
+// None listing style
+.u-list--none-style{
+	li{
+		list-style:none;
+	}
+}
+// Require install Fontawesome
+.u-list--gift-style{
+	list-style:none;
+	padding-left:0px;
+	li{
+		padding-left:10px;
+		&:before{
+			content: "\f06b"; /* FontAwesome Unicode */
+			font-family: FontAwesome;
+			display: inline-block;
+			margin-left: -10px; /* same as padding-left set on li */
+			width: 10px; /* same as padding-left set on li */
+		}
+	}
+}
+////// HREF STYLE //////
+.u-ablack{
+	a{
+		color:$body-text-color;
+		&:hover,&:active{
+			color:lighten($body-text-color,2%);
+			@extend %transition;
+		}
+	}
+}
+.u-alight{
+	a{
+		color:$oss-light;
+		&:hover,&:active{
+			color:lighten($oss-light,2%);
+			@extend %transition;
+		}
+	}
+}
+.u-link--lighter{
+	color:$oss-lighter;
+	&:hover,&:active{
+		color:$oss-light;
+		@extend %transition;
+	}
+}
+////// OVERFLOW //////
+.u-overflow-hidden{
+	overflow:hidden;
+}
+////// ABSOLUTE //////
+.u-right-5{
+	right:5px;
+}
+// Force cursor pointer
+.u-pointer{
+	cursor:pointer !important;
+	pointer-events:all;
+}
+.u-hover--pointer{
+	&:hover{
+		cursor:pointer !important;
+		pointer-events:all;
+	}
+}
+.u-cursor-disable{
+	cursor: default !important;
+    pointer-events: none;
+}
+// White Space //
+.u-pre-line{
+	white-space:pre-line;
+}
+.u-no-wrap{
+	white-space:nowrap;
+}
+
+// Have scrollbar
+.u-y-scrollbar{
+	overflow-y:auto;
+}
+// Flex-wrap
+.u-flex-wrap{
+	display:flex;
+	display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    clear:both;
+}
+
+// Grid //
+.u-col-padding--none{
+	[class*='col-']{
+		padding:0px;
+	}
+}
+
+
+// Utilitites on Responsive
+// All devices larger than 1200px
+@media (min-width:$screen-lg-min){
+	.u-padding-0\@lg,.u-pad--all-0\@lg{
+		padding:0 !important;
+	}
+}
+// All devices larger than 768px
+@media (min-width:$screen-sm-max){
+	.u-padding-0\@md,.u-pad--all-0\@md{
+		padding:0 !important;
+	}
+}
+// All devices smaller than 768px
+@media (max-width:$screen-sm-min){
+	.u-text-black\@sm{
+		color:$body-text-color !important;
+	}
+	.u-padding-0\@sm,.u-pad--all-0\@sm{
+		padding:0 !important;
+	}
+	.u-pad--h-0\@sm{
+		padding-right:0px !important;
+		padding-left:0px !important;
+	}
+	.u-margin-0\@sm{
+		margin:0 !important;
+	}
+	.u-m--right-0\@sm{
+		margin-right:0px;
+	}
+	.u-text-align--center\@sm{
+		text-align:center;
+	}
+}

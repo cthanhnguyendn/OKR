@@ -1,0 +1,71 @@
+// Contact
+.contact{
+	.contact__sidebar{
+		padding:15px;
+		border:1px solid $oss-lighter;
+	}
+}
+.c-listcontact{
+	@extend .mailbox--table;
+	border-left:1px solid $box-border-color;
+	border-right:1px solid $box-border-color;
+	tbody{
+		tr{
+			td{
+				height:35px;
+				&:first-child{
+					width:30px;
+				}
+			}
+			&:last-child{
+				border-bottom:1px solid $box-border-color;
+			}
+		}
+	}
+}
+// Control Buttons
+.c-controlbtn{
+	button{
+		font-size:16px;
+	}
+}
+.c-table{
+	width:100%;
+	tr{
+		height: 40px;
+		td{
+			vertical-align: middle;
+			&:first-child{
+				width:40px;
+				text-align:left;
+				padding-left:15px;
+			}
+			&:last-child{
+				padding-right:15px;
+			}
+		}
+	}
+	i{
+		color:$oss-light;
+		font-size:16px;
+	}
+}
+// Hover on row
+.c-table--hover{
+	tr{
+		cursor:pointer;
+		&:hover{
+			background-color:lighten($oss-lightest,2%);
+			@extend %transition;
+		}
+	}
+}
+// User infor contact
+.c-userinfor{
+	.c-userinfor__add{
+		bottom:0;
+		// position:absolute;
+		width:100%;
+		margin-bottom: 30px;
+	}
+}

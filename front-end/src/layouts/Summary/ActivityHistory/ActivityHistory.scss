@@ -1,0 +1,20 @@
+.activity-history{
+  ul.activity-timeline{
+    list-style: none;
+    padding-left: 0px;
+    li{
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      img.users{
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        margin-right: 10px;
+      }
+      :last-child{
+        flex: 1;
+      }
+    }
+  }
+}

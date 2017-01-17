@@ -1,0 +1,740 @@
+// Import mailbox
+@import "../pages/mailbox";
+.mail{
+	.mail__controls{
+		padding:0px;
+		margin-bottom: 5px;
+		button, .btn{
+		min-width:60px;
+		text-align:center;
+		white-space:nowrap;
+		outline:0;
+		cursor:default;
+		font-weight:bold;
+			a{
+				color:$body-text-color;
+				&:hover {
+					color: lighten($body-text-color,2%);
+					@include transition($transition-fn $transition-speed all);
+				}
+			}
+		}
+		// Components in mail_controls
+		.c-mail-control{
+			margin-bottom: 10px;
+		}
+
+		// Responsive on XS screen
+		@media (max-width:$screen-sm-min){
+			padding-left:10px;
+			padding-right:10px;
+		}
+	}
+	// Maibox-tab
+	.mailbox-tab{
+		margin-right:0px !important;
+		background-color:lighten($oss-lightest,3%);
+		border-bottom: 1px solid $box-border-color;
+		border-right:1px solid $box-border-color;
+		width:251px;
+		&.active {
+			background-color:#fff;
+			border-bottom:none;
+			border-right:none;
+			border-left:none;
+			border-top-color:$oss-banana !important;
+		}
+		&:first-child{
+			&.active {
+				border-top-left-radius:3px;
+			}
+		}
+		&.is-plus{
+			width:45px;
+		}
+		// Responsive on sm screen
+		@media(max-width:$screen-sm-min){
+			width: auto !important;
+		}
+	}
+	.mailbox__tabs{
+		background-color:lighten($oss-lightest,3%);
+		border-bottom: 1px solid $box-border-color;
+	}
+
+}
+// Mailbox - Table
+.mailbox--table{
+	table{
+		tr{
+			background-color:lighten($oss-lightest,3%);
+			color: lighten($body-text-color,2%);
+			cursor:pointer;
+			&.is-active{
+				background-color:rgba(255,153,72,0.1) !important;
+				@extend %transition;
+				.mailbox-name{
+					a{
+						font-weight: bold;
+					}
+				}
+			}
+			.mailbox-name{
+				a{
+					color:lighten($body-text-color,2%);
+				}
+			}
+			td{
+				padding:5px 8px;
+				&:last-child{
+					border-bottom:0;
+					vertical-align: middle;
+				}
+				&.mailbox-date{
+					text-align:right;
+					width:17.5%;
+					white-space:nowrap;
+				}
+				// Set width to p tag in mailbox-subject
+				&.mailbox-subject{
+					p{
+						max-width:400px;
+						overflow:hidden;
+						max-height:25px;
+						text-overflow:ellipsis;
+					}
+				}
+				// First child
+				&:first-child,&.mailbox-star,&.mailbox-attachment{
+					width:4%;
+				}
+				&.mailbox-subject{
+					a{
+						color:$body-text-color;
+					}
+				}
+				&.mailbox-name{
+					width: 20%;
+					white-space:nowrap;
+				}
+				&.mailbox-subject{
+					strong{
+						font-weight:normal;
+					}
+				}
+				&.mailbox-attachment{
+					text-align:center;
+				}
+			}
+			// New email on Table
+			&.is-new, &.is-white{
+				background: #fff;
+
+				.mailbox-name{
+					a{
+						font-weight: bold;
+					}
+				}
+				.mailbox-subject{
+					strong{
+						font-weight:bold;
+					}
+				}
+				.c-mailbox-subject__title{
+					font-weight: bold;
+				}
+				.mailbox-date{
+					font-weight: bold;
+				}
+			}
+			// Selected email
+			&.is-selected {
+				background:lighten($oss-orange,45%);
+				border-left:2px solid $oss-banana;
+			}
+		}
+	}
+}
+// Back2oss button:
+.c-back2oss{
+	margin:20px 0px;
+	font-weight:bold;
+	text-align:center;
+	display:table;
+	vertical-align:middle;
+	width:100%;
+	&:after{
+		display:table-cell;
+	}
+}
+// Form group
+%invisible-fg{
+	.form-group{
+	margin:0;
+			input[type="text"]{
+				border-color:#fff;
+				border:0px;
+			}
+	}
+}
+// Mail 1poser
+.c-mailcomposer{
+	display:none;
+	width:550px;
+	max-height:525px;
+	z-index:800;
+	position:fixed;
+	bottom:0;right:15px;
+	border-top:0px !important;
+	margin:0px;
+	z-index:100;
+	@extend .o-shadow2;
+	.form-group{
+		vertical-align: middle;
+		input[type="text"],textarea{
+			padding-left:0px;
+			padding-right:0px;
+		}
+	}
+	.box-body{
+		max-height:481px;
+		overflow-y:auto;
+	}
+	// Mail box title
+	.c-mailcomposer__title{
+		@extend %dark-gray-gradient;
+		color:#fff;
+		font-weight:bold;
+		border-top-left-radius:3px;
+		border-top-right-radius:3px;
+		padding-top:10px;
+		padding-bottom:10px;
+		.box-title{
+			margin-left: 10px;
+		}
+		.c-controls{
+			color:#fff;
+			padding:5px;
+			&:hover{
+				color:darken(#fff,2%);
+				@extend %transition;
+			}
+		}
+	}
+	// Sent mail
+	.c-mailcomposer__sent{
+		padding:10px;
+		border-bottom:1px solid $oss-lighter;
+		@extend %invisible-fg;
+		.is-cc,.is-bcc{
+			display:none;
+			input[type="text"]{
+				width:400px !important;
+			}
+		}
+		.form-group{
+			height: auto;
+			padding-left:0px;
+			label{
+				font-weight: normal;
+				color: $oss-light;
+				min-width:49px;
+				flex-grow: 0;
+				padding:6px 10px 0 15px;
+				margin:0px;
+			}
+			.form-control{
+				padding-left:0
+			}
+			input[type="text"]{
+				width:380px;
+				margin-top:-2px;
+			}
+			// None border on Select2
+			.select2-container--default .select2-selection--multiple {
+				border:0px !important;
+			}
+		}
+		// Raise padding-right
+		.form-inline{
+			// Sent
+			.form-group > .form-group{
+				padding-right:70px;
+			}
+			&.is-cc,&.is-bcc{
+				.form-group > .form-group{
+					padding-right:40px;
+				}
+			}
+		}
+		// Responsive
+		// On SM screen
+		@media (max-width:$screen-sm-min){
+			.c-informbtn{
+				right:0px !important;
+			}
+		}
+	}
+	// Mail content
+	.c-mailcomposer__body{
+		// Form group
+		@extend %invisible-fg;
+		.c-mailcontent{
+			padding-left:20px;
+			padding-right:20px;
+			}
+		.c-mailtitle{
+			padding:20px 20px 10px 20px;
+			input[type="text"]{
+				font-size:120%;
+				font-weight: bold;
+				padding:0px;
+				margin:0px;
+				height:25px;
+			}
+		}
+		.c-mailcontent{
+			textarea{
+				border-color:#fff;
+			}
+		}
+	}
+	// Mobile control mail
+	.c-mailcomposer--mobile-control{
+		display:none;
+		background-color:lighten($oss-lightest,2%);
+		border-bottom:1px solid $oss-lighter;
+		@media(max-width:$screen-sm-min){
+			  display:block;
+			  padding: 10px;
+		}
+	}
+	// Responsive
+	// On xs screen
+	@media (max-width:$screen-sm-min){
+		z-index:1100;
+		right:0;
+		width:100%;
+		height:100%;
+	}
+}
+// Foooter control mail
+.c-mailcontrol{
+	display:table;
+	width:100%;
+	vertical-align: middle;
+	padding:10px 20px;
+	ul,button{
+		display:table-cell;
+		vertical-align: middle;
+	}
+	.c-mailcontrol__editor{
+		padding:0;
+		position:relative;
+		float:left;
+		margin:0;
+		li{
+			display:inline-block;
+			padding:7px;
+			&.is-1st-child{
+				padding-left:0px;
+			}
+			a{
+				color:$body-text-color;
+			}
+		}
+	}
+	// Responsive on xs screen
+	@media (max-width:$screen-xs-max){
+		position:absolute;
+		bottom:15px;
+	}
+}
+
+// READ MAIL
+.mail__read{
+	background-color:#fff;
+	border-radius:$box-border-radius;
+	border:1px solid $oss-lighter;
+	/// Mail Detail - Right
+	.c-maildetail{
+		min-height:475px;
+		// Only on lg screen
+		@media (min-width:$screen-lg-min){
+			border-right: 1px solid $oss-lighter;
+		}
+		//// Padding for all elements in
+		.c-mail-title,.c-mailrow{
+			padding:10px;
+		}
+		//// Mail row
+		.c-mailrow{
+			border-bottom: 1px solid $oss-lighter;
+			// count number if have multi reply mail
+			&.is-count-rep{
+				position: relative;
+			    cursor: pointer;
+			    // Two lines
+			    &::before,&::after{
+					content: ' ';
+					border-top:1px solid lighten($newsfeed-post-border-color, 5%);
+					position:absolute;
+					left:0px;
+					line-height: 0px;
+					right:0;
+				}
+				&::before{
+					top:46%;
+				}
+				&::after{
+					top:53%;
+				}
+				// Number in circle
+				.c-circle-num{
+					height:45px !important;
+					width:45px !important;
+				}
+			}
+			// Mini mail
+			&.is-mini{
+				cursor:pointer;
+				.c-mailinfo .c-mailfromto{
+					max-width:475px;
+					overflow:hidden;
+					p{
+						margin:5px 0 0 0;
+					}
+				}
+				// Hidden content
+				.c-mailcontent, .c-mailinfo .btn-group, .mailbox-star{
+					display:none !important;
+				}
+			}
+			// Have border when user have just clicked on mini mail
+			&.has-border{
+				border-left:2px solid $oss-blue;
+			}
+		}
+		.c-mailrow--last{
+			border-bottom: 0px;
+		}
+		//// Mail tile
+		.c-mail-title{
+			border-bottom: 1px solid $oss-lighter;
+			.c-title{
+				font-size:18px;
+				line-height: 1.8;
+				font-weight:600;
+				margin-right:15px;
+				// Vu modify
+				word-wrap: break-word;
+			}
+		}
+		//// Mail content
+		.c-mailinfo{
+			.c-mailfromto{
+				padding-left:10px;
+				a{
+					color:$body-text-color;
+					&:hover{
+						color: lighten($body-text-color,2%);
+						@extend %transition;
+					}
+				}
+			}
+		}
+		.c-mailcontent{
+			padding-top:10px;
+			padding-left:55px;
+			.c-mailcontent__attach{
+				padding-top:10px;
+				margin-top:15px;
+				border-top:1px dashed $oss-lighter;
+			}
+		}
+		.is-mailrep{
+			.c-mailreply{
+				a{
+					color:$body-text-color;
+					text-decoration:underline;
+					&:hover{
+						color:lighten($body-text-color,2%);
+						@extend %transition;
+					}
+				}
+			}
+		}
+		// Box border
+		.is-mailrep,.is-mailrep--forward{
+			.c-mailreply{
+				border:1px solid $oss-lightest;
+				min-height: 75px;
+				margin-left:10px;
+				max-height:100%;
+				position:relative;
+				// overflow-y:auto;
+				// overflow-x:hidden;
+			}
+		}
+		// Box reply mail composer
+		.c-mailreply{
+			.c-mailreply__header,.c-mailreply__body{
+				border-bottom: 1px solid $oss-lightest;
+			}
+			// If height over 150 show vertical scroll bar on header mailreply
+			.c-mailreply__header{
+				// overflow-y:auto;
+				// max-height:200px;
+			}
+			// Max height body
+			.c-mailreply__body{
+				height: 100%;
+				padding-left:5px;
+				padding-right:5px;
+				overflow-y:auto;
+				overflow-x: hidden;
+				// If have WYSIHTML5
+				.wysihtml5-sandbox{
+					height:100% !important;
+					padding-right: 0px !important;
+					&::-webkit-scrollbar {
+						display:none;
+					}
+					max-height:350px;
+					min-height:200px;
+					overflow-x:hidden;
+					overflow-y:auto;
+				}
+			}
+			.c-mailreply__footer{
+				@extend .c-mailcontrol;
+				padding-left:5px;
+				padding-right:10px;
+			}
+		}
+	}
+	/// Mail Analytics - Left
+	.c-mailanalytics{
+		padding-left:15px;
+		padding-right:15px;
+		.c-mailuserinfo{
+			padding:10px 10px 10px 0;
+			margin-bottom:10px;
+		}
+		.c-mailreadcount, .c-mailuserinfo{
+			border-bottom:1px dashed $oss-lighter;
+		}
+		// Responsive
+		// On lg screen
+		@media (min-width:$screen-lg-min){
+			margin-right:15px;
+			margin-left:-15px;
+		}
+		// On sm screen
+		@media (max-width:$screen-sm-min){
+			margin-right:0px;
+			margin-left:0px;
+		}
+		//
+	}
+}
+.c-list-useravatar{
+	list-style:none;
+	padding-left:0;
+	min-height:30px;
+	margin:0;
+	li{
+		display:inline-block;
+		width:20%;
+		float:left;
+		text-align:center;
+		&:first-child{
+			padding-left:0px;
+		}
+		&:last-child{
+			padding-right:0px;
+		}
+	}
+}
+// Responsive Circle Count
+.c-circlecount{
+	width: 100%;
+   	padding:5%;
+   	background-color: #fff;
+	margin-bottom: 5%;
+}
+.c-circle {
+  &:after {
+    content: "";
+    display: block;
+    width: 35px;
+    height:0;
+    padding-bottom: 100%;
+    background: #fff;
+    border:1px solid $oss-lighter;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  &:hover:after {
+    background-color: #fff;
+  }
+ div {
+    float:left;
+    width:100%;
+    padding-top:100%;
+    line-height:1em;
+    margin-top:-1.7em;
+    text-align:center;
+    a{
+    	color:$body-text-color;
+    }
+ }
+  p {text-align: center; font-size: 1.2em;}
+}
+// Head reply mail box composer
+.c-mailreply__header{
+	tbody{
+		tr{
+			td{
+				padding-top:5px;
+				padding-bottom:5px;
+				&:first-child{
+					width:40px;
+					text-align:center;
+					vertical-align: top;
+				}
+			}
+		}
+	}
+}
+.c-mailreply__body{
+	padding-top:10px;
+	textarea{
+		resize:none;
+	}
+}
+// // Select2
+.c-select2-noborder{
+	.select2-selection--multiple{
+		border:0px !important;
+		border-radius:3px;
+	}
+}
+// Listing users avatar and info
+.c-list-useravatar--vertical{
+	list-style:none;
+	padding-left:0px;
+	max-height:425px;
+	overflow:auto;
+	li{
+		display:table;
+		width:100%;
+		padding-top:10px;
+		// Non padding in First child
+		&:first-child{
+			padding-top:0px;
+		}
+		a,.c-list-useravatar__info{
+			display:table-cell;
+			vertical-align: top;
+		}
+		a{
+			padding-right:10px;
+			max-width:75px;
+		}
+		.c-list-useravatar__info{
+			border-bottom: 1px solid $box-border-color;
+			padding-bottom: 10px;
+			width:100%;
+		span{
+				float:left;
+				margin-top:8px;
+			}
+			a.btn{
+				float:right;
+			}
+		}
+		&:after{
+			@extend %clearfix;
+		}
+	}
+}
+// Number in circle
+.c-circle-num{
+	background:#fff;
+	border-radius:50%;
+	line-height:40px;
+	width:40px;
+	position:relative;
+	border:1px solid lighten($newsfeed-post-border-color,5%);
+	z-index:1;
+	box-sizing:border-box;
+	text-align:center;
+	display:block;
+	font-size: 18px;
+}
+
+// Card in Email
+.c-mailcontent__card{
+	position:relative;
+	display:table;
+	width:100%;
+	border-radius:$box-border-radius;
+	border:1px solid $oss-lighter;
+	.c-card-left,.c-card-right{
+		display:table-cell;
+	}
+	.c-card-left{
+		vertical-align:top;
+		border-right:1px solid $oss-lighter;
+		width:150px;
+		padding:20px;
+		.o-icon{
+			border-radius:$box-border-radius;
+			max-width:80px;
+			height:80px;
+			text-align:center;
+			padding:15px;
+			font-size:48px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
+	.c-card-right{
+		vertical-align:top;
+		.c-card-right__title{
+			background-color:$oss-lightest;
+			padding: 10px 0px 10px 15px;
+			margin-bottom:15px;
+		}
+		section{
+			padding-left:15px;
+			padding-bottom:15px;
+			.c-block-content{
+				padding-left:15px;
+				.c-block-content__icon{
+					font-size:22px;
+					color:$oss-light;
+					padding-right:20px;
+					vertical-align:middle;
+				}
+				.c-block-content__text{
+					p{
+						margin:0px;
+						margin-top:5px;
+					}
+				}
+			}
+		}
+	}
+	.c-card-action{
+		padding-top:15px;
+		border-top:1px solid $oss-lighter;
+	}
+	// On hover
+	&:hover{
+		@extend .o-shadow2;
+		@include transition($transition-speed $transition-fn);
+	}
+}

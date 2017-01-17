@@ -1,0 +1,309 @@
+[
+  {
+    "title": "GÓC LÀM VIỆC",
+    "faIconClass": "fa-star",
+    "subMenu":[
+      {
+        "title": "Bảng tin",
+        "url":"#"
+      },{
+        "title": "Lịch làm việc",
+        "url":"#"
+      },{
+        "title": "Hộp thư",
+        "url":"#"
+      },{
+        "title": "Task",
+        "url":"#"
+      },{
+        "title": "Chấm công",
+        "url":"#"
+      },{
+        "title": "Nhóm của tôi",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "BÁN HÀNG TẠI CỬA HÀNG",
+    "faIconClass": "fa-shopping-cart",
+    "subMenu":[
+      {
+        "title": "POS Cửa hàng",
+        "url":"#"
+      },{
+        "title": "Xử lí đơn hàng",
+        "url":"#"
+      },{
+        "title": "Tra cứu đơn hàng online",
+        "url":"#"
+      },{
+        "title": "Điều phối đơn hàng",
+        "url":"#"
+      },{
+        "title": "Báo cáo bán hàng online",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "BÁN SỈ",
+    "faIconClass": "fa-suitcase",
+    "subMenu":[
+      {
+        "title": "Tạo đơn hàng sỉ",
+        "url":"#"
+      },{
+        "title": "Quản lý hoạt động bán sỉ",
+        "url":"#"
+      },{
+        "title": "Tra cứu đơn hàng sỉ",
+        "url":"#"
+      },{
+        "title": "Xử lí đơn hàng sỉ",
+        "url":"#"
+      },{
+        "title": "Hợp đồng khách hàng",
+        "url":"#"
+      },{
+        "title": "Báo cáo bán sỉ",
+        "url":"#"
+      },{
+        "title": "Partner Portal",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "GIÁ - CTKM - THỊ TRƯỜNG",
+    "faIconClass": "fa-suitcase",
+    "subMenu":[
+      {
+        "title": "Chương trình khuyến mãi",
+        "url":"#"
+      },{
+        "title": "Phiếu quà tặng",
+        "url":"#"
+      },{
+        "title": "Khảo sát thị trường",
+        "url":"#"
+      },{
+        "title": "Thiết lập giá",
+        "url":"#"
+      },{
+        "title": "Quản lí trưng bày",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "DỊCH VỤ 5 SAO",
+    "faIconClass": "fa-star",
+    "subMenu":[
+      {
+        "title": "Phân ca cửa hàng",
+        "url":"#"
+      },{
+        "title": "Chấm công",
+        "url":"#"
+      },{
+        "title": "Điểm cửa hàng",
+        "url":"#"
+      },{
+        "title": "Điểm nhân viên",
+        "url":"#"
+      },{
+        "title": "Chấm điểm camera",
+        "url":"#"
+      },{
+        "title": "Giám sát camera",
+        "url":"#"
+      },{
+        "title": "Happy Calls",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "KHÁCH HÀNG",
+    "faIconClass": "fa-user-circle-o",
+    "subMenu":[
+      {
+        "title": "Tra cứu thông tin KH",
+        "url":"#"
+      },{
+        "title": "Nhập liệu KH",
+        "url":"#"
+      },{
+        "title": "Xác thực thông tin KH",
+        "url":"#"
+      },{
+        "title": "Phân tích dữ liệu KH",
+        "url":"#"
+      },{
+        "title": "Tương tác khách hàng",
+        "url":"#"
+      },{
+        "title": "Than phiền từ KH",
+        "url":"#"
+      },{
+        "title": "Màn hình cho KH",
+        "url":"#"
+      },{
+        "title": "Báo cáo khách hàng",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "SẢN XUẤT",
+    "faIconClass": "fa-calculator",
+    "subMenu":[
+      {
+        "title": "Quản lý mẫu thiết kế",
+        "url":"#"
+      },{
+        "title": "Tra cứu thông tin s.phẩm",
+        "url":"#"
+      },{
+        "title": "Cấu hình PSI",
+        "url":"#"
+      },{
+        "title": "Xuất nhập kho",
+        "url":"#"
+      },{
+        "title": "Chuyển hàng",
+        "url":"#"
+      },{
+        "title": "Kiểm kê",
+        "url":"#"
+      },{
+        "title": "Báo cáo kho",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "HÀNG HOÁ - KHO",
+    "faIconClass": "fa-calculator",
+    "subMenu":[
+      {
+        "title": "Quản lý danh mục",
+        "url":"#"
+      },{
+        "title": "Tra cứu thông tin s.phẩm",
+        "url":"#"
+      },{
+        "title": "Cấu hình PSI",
+        "url":"#"
+      },{
+        "title": "Xuất nhập kho",
+        "url":"#"
+      },{
+        "title": "Chuyển hàng",
+        "url":"#"
+      },{
+        "title": "Kiểm kê",
+        "url":"#"
+      },{
+        "title": "Báo cáo kho",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "GIAO NHẬN",
+    "faIconClass": "fa fa-truck",
+    "subMenu":[
+      {
+        "title": "GIAO NHẬN",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "NHÂN SỰ - LƯƠNG",
+    "faIconClass": "fa-users",
+    "subMenu":[
+      {
+        "title": "Sơ đồ tổ chức",
+        "url":"#"
+      },{
+        "title": "Quản lý sơ đồ tổ chức",
+        "url":"#"
+      },{
+        "title": "Quản lý tuyển dụng",
+        "url":"#"
+      },{
+        "title": "Quán lý nhân viên",
+        "url":"#"
+      },{
+        "title": "Phân ca",
+        "url":"#"
+      },{
+        "title": "Quán lý công",
+        "url":"#"
+      },{
+        "title": "Quán lý tác vụ",
+        "url":"#"
+      },{
+        "title": "Báo cáo nhân sự",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "KẾ TOÁN",
+    "faIconClass": "fa-users",
+    "subMenu":[
+      {
+        "title": "Quản lý, in hóa đơn GTGT",
+        "url":"#"
+      },{
+        "title": "Tra cứu chi tiết đơn hàng",
+        "url":"#"
+      },{
+        "title": "Đối soát bán hàng thu tiền",
+        "url":"#"
+      },{
+        "title": "Công nợ khách hàng",
+        "url":"#"
+      },{
+        "title": "Công nợ nhà cung cấp",
+        "url":"#"
+      },{
+        "title": "Dòng tiền",
+        "url":"#"
+      },{
+        "title": "Bảng CDKT",
+        "url":"#"
+      },{
+        "title": "P&amp;L",
+        "url":"#"
+      }
+    ]
+  },{
+    "title": "CÁC LOẠI BÁO CÁO",
+    "faIconClass": "fa-users",
+    "subMenu":[
+      {
+        "title": "Báo cáo bán hàng",
+        "url":"#"
+      },{
+        "title": "Báo cáo online",
+        "url":"#"
+      },{
+        "title": "Báo cáo CTKM",
+        "url":"#"
+      },{
+        "title": "Báo cáo dịch vụ 5 Sao",
+        "url":"#"
+      },{
+        "title": "Báo cáo khách hàng",
+        "url":"#"
+      },{
+        "title": "Báo cáo mua hàng",
+        "url":"#"
+      },{
+        "title": "Báo cáo sản xuất",
+        "url":"#"
+      },{
+        "title": "Báo cáo hàng hóa và kho",
+        "url":"#"
+      },{
+        "title": "Báo cáo kế toán",
+        "url":"#"
+      }
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+
+.border-footer{
+  border-radius: 0px 0px 5px 5px;
+  border: solid 1px #e0e0e0;
+  border-width: 0px 1px 1px 1px;
+  border-collapse: separate;
+  padding-bottom: 17px;
+  background: #ffffff;
+
+  &:after{
+    clear: both;
+    content: " ";
+    display: table;
+  }
+  &:before{
+    clear: both;
+    content: " ";
+    display: table;
+  }
+  div{
+    &:after{
+      clear: both;
+      content: " ";
+      display: table;
+    }
+  }
+}
+.pagination_container {
+  margin-top: 10px;
+  .item-per-page {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    margin-bottom: 0;
+    li {
+      float: left;
+    }
+  }
+  ul.pagination{
+    float: right;
+    margin: 0px;
+    .page-block{
+      float: left;
+      display: inline;
+      margin-right: 16px;
+    }
+    li{
+      a{
+        background: none;
+        border: none;
+        padding: 2px;
+        font-size: 12px;
+        padding-right: 16px;
+      }
+    }
+    &:after{
+      clear: both;
+    }
+  }
+  select{
+    @include border-radius($input-radius,$input-radius,$input-radius,$input-radius);
+    box-shadow: none;
+    border-color: $form-comtrol-border-color;
+    margin-right: 5px;
+    &:focus,&:hover {
+      border-color: $form-comtrol-border-color-hover;
+      box-shadow: none;
+    }
+  }
+}

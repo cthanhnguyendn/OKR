@@ -1,0 +1,21 @@
+.setup-okr-tab-header-text{
+  text-align: center;
+  padding: 0px 10px;
+  &.lower{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #ffc107;
+  }
+  &.negative{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    color: #25cb68;
+  }
+  &.message{
+
+  }
+}

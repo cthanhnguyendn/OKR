@@ -1,0 +1,346 @@
+/*
+ * Component: Main Header
+ * ----------------------
+ */
+
+.main-header {
+	position: relative;
+	max-height: 100px;
+	z-index: 1030;
+	//Navbar
+	> .navbar {
+		@include transition(margin-left $transition-speed $transition-fn);
+		margin-bottom: 0;
+		margin-left: $sidebar-width;
+		border: none;
+		min-height: $navbar-height;
+		border-radius: 0;
+		.layout-top-nav & {
+			margin-left: 0;
+		}
+		// All devices smaller than 768px
+		@media (max-width: $screen-sm){
+			.main-header{
+				.logo{
+					display:block;
+					width:100%;
+				}
+			}
+		}
+	}
+	//Navbar search text input
+	#navbar-search-input.form-control, #searchmail.form-control {
+		border-color: transparent;
+		border-radius:$box-border-radius;
+		&:focus,
+		&:active {
+			border-color: rgba(0, 0, 0, .1);
+		}
+		&::-moz-placeholder {
+			color: #ccc;
+			opacity: 1;
+		}
+		&:-ms-input-placeholder {
+			color: #ccc;
+		}
+		&::-webkit-input-placeholder {
+			color: #ccc;
+		}
+
+	}
+	//Navbar Right Menu
+	.navbar-custom-menu,
+	.navbar-right {
+		float: right;
+		@media (max-width: $screen-sm-max) {
+			a {
+				color: inherit;
+				background: transparent;
+			}
+		}
+	}
+	.navbar-right {
+		@media (max-width: $screen-header-collapse) {
+			float: none;
+			.navbar-collapse & {
+				margin: 7.5px -15px;
+			}
+
+			> li {
+				color: inherit;
+				border: 0;
+			}
+		}
+	}
+	//Navbar toggle button
+	.sidebar-toggle {
+		float: left;
+		background-color: transparent;
+		background-image: none;
+		padding: $navbar-padding-vertical $navbar-padding-horizontal;
+		//Add the fontawesome bars icon
+		font-family: fontAwesome;
+		&:before {
+			content: "\f0c9";
+		}
+		&:hover {
+			color: #fff;
+		}
+		&:focus,
+		&:active {
+			background: transparent;
+		}
+	}
+	.sidebar-toggle .icon-bar {
+		display: none;
+	}
+	//Navbar User Menu
+	.navbar .nav > li.user > a {
+		> .fa,
+		> .glyphicon,
+		> .ion {
+			margin-right: 5px;
+		}
+	}
+
+	//Labels in navbar
+	.navbar .nav > li > a > .label {
+		position: absolute;
+		top: 9px;
+		right: 7px;
+		text-align: center;
+		font-size: 9px;
+		padding: 2px 3px;
+		line-height: .9;
+		&.label-noti{
+			@include gradient(#d54545,#f65959,#d54545,"");
+			color:#fff;
+			border:1px solid $oss-lightest;
+		}
+	}
+
+	//Logo bar
+	.logo {
+		@include transition(width $transition-speed $transition-fn);
+		display: block;
+		float: left;
+		height: $navbar-height;
+		font-size: 20px;
+		line-height: 50px;
+		text-align: center;
+		width: $sidebar-width;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		padding: 0 15px;
+		font-weight: 300;
+		overflow: visibile;
+		//Add support to sidebar mini by allowing the user to create
+		//2 logo designs. mini and lg
+		.logo-lg {
+			//should be visibile when sidebar isn't collapsed
+			display: block;
+		}
+		.logo-mini {
+			display: none;
+		}
+		// Quy modify
+
+		// .c-logo-dropdown{
+		// 	display:block;
+		// }
+	}
+	//Navbar Brand. Alternative logo with layout-top-nav
+	.navbar-brand {
+		color: #fff;
+	}
+
+	// Toggle button to display searchbox
+	.c-toggle-btn{
+		padding:15px 15px;
+		float:left;
+		background-color:transparent;
+		background-image:none;
+		font-family:fontAwesome;
+	}
+}
+
+// Content Header
+.content-header {
+	position: relative;
+	padding: 15px 15px 0 15px;
+	// Header Text
+	> h1 {
+		margin: 15px 0 0 0;
+		font-size: 24px;
+		> small {
+			font-size: 15px;
+			display: inline-block;
+			padding-left: 4px;
+			font-weight: 300;
+		}
+	}
+
+	> .breadcrumb {
+		float: left;
+		background: transparent;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 12px;
+		padding: 7px 5px;
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		@include border-radius(2px,2px,2px,2px);
+		> li > a {
+			color: #444;
+			text-decoration: none;
+			display: inline-block;
+			> .fa, > .glyphicon, > .ion {
+				margin-right: 5px;
+			}
+		}
+		> li + li:before {
+			content: '>\00a0';
+		}
+	}
+
+	@media (max-width: $screen-sm-max) {
+		> .breadcrumb {
+			position: relative;
+			margin-top: 5px;
+			top: 0;
+			right: 0;
+			float: none;
+			background: $gray;
+			padding-left: 10px;
+			li:before {
+				color: darken($gray, 20%);
+			}
+		}
+	}
+	// Quy Pham modify
+	.breadcrumb{
+		background-color:transparent;
+		margin-bottom:0px;
+		padding: 10px 0 5px 0;
+	}
+	.c-page-title{
+		font-weight: 300;
+	margin: 0 0 5px 0;
+	font-size:28px;
+	}
+}
+
+.navbar-toggle {
+	color: #fff;
+	border: 0;
+	margin: 0;
+	padding: $navbar-padding-vertical $navbar-padding-horizontal;
+}
+
+//Control navbar scaffolding on x-small screens
+@media (max-width: $screen-sm-max) {
+	.navbar-custom-menu .navbar-nav > li {
+		float: left;
+	}
+
+	//Dont't let links get full width
+	.navbar-custom-menu .navbar-nav {
+		margin: 0;
+		float: left;
+	}
+
+	.navbar-custom-menu .navbar-nav > li > a {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		line-height: 20px;
+	}
+}
+
+// Collapse header
+@media (max-width: $screen-header-collapse) {
+	.main-header {
+		position: relative;
+		.logo,
+		.navbar {
+			width: 100%;
+			float: none;
+		}
+		.logo{
+			background: #535c69;
+    		border-bottom: 1px solid #67707d;
+		}
+		.navbar {
+			margin: 0;
+		}
+		.navbar-custom-menu {
+			float: right;
+		}
+	}
+}
+
+.navbar-collapse.pull-left {
+	@media (max-width: $screen-sm-max) {
+		float: none !important;
+		+ .navbar-custom-menu {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 40px;
+		}
+	}
+}
+
+.c-header-searchbox{
+	.form-control-feedback{
+		background:$oss-lightest;
+		border-top-right-radius:3px;
+		border-bottom-right-radius:3px;
+	}
+
+	@media (max-width: $screen-xs-min){
+		min-width: 325px;
+		width:auto;
+		display:inline-block;
+		margin-top:8px;
+		margin-bottom:8px;
+	}
+	// Responsive
+	@media (min-width: $screen-sm-min) {
+		min-width:325px;
+		margin-left:15px;
+	}
+	@media (min-width: $screen-md-min) {
+		max-width: $searchbox-header-width;
+		min-width: $searchbox-header-width - 150px;
+		width:auto;
+	}
+	// Large screen
+	@media (min-width: $screen-lg-min) {
+		width:$searchbox-header-width;
+	}
+}
+// Responsive for all header
+.main-header{
+	@media (max-width:$screen-sm-min){
+		max-height:150px;
+	}
+	@media (min-width:$screen-sm-min){
+		max-height:150px;
+	}
+	@media (min-width:$screen-md-min){
+
+	}
+	@media (min-width:$screen-lg-min){
+
+	}
+}
+.c-mobile-searchbox{
+	padding-top:8px;
+	padding-bottom:8px;
+	background-color:$oss-lightest;
+	border-bottom:1px solid $oss-lighter;
+}
+
+.hide-search{
+	display: none;
+}

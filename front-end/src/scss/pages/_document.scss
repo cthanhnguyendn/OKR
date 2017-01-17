@@ -1,0 +1,103 @@
+$document-menu-width : 250px;
+.color-cell{
+  display: flex;
+  margin: 10px;
+  .color-rect{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+  .color-info{
+    flex:1;
+    .color{
+      font-size: 18px;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: left;
+      color: #000000;
+    }
+    .description{
+      font-size: 13px;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: left;
+      color: #000000;
+    }
+  }
+}
+.document{
+  .main-header{
+    .navbar{
+      background-color: #3c8dbc;
+      .nav>li>a{
+        color: #fff;
+        &:hover{
+          background: rgba(0,0,0,0.1);
+          color: #f6f6f6;
+        }
+      }
+    }
+    .logo{
+      background-color: #367fa9;
+      color: #fff;
+      border-bottom: 0 solid transparent;
+    }
+  }
+  .main-sidebar{
+    background-color: #222d32;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: $document-menu-width;
+    z-index: 810;
+    -webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
+    transition: transform .3s ease-in-out,width .3s ease-in-out;
+
+    .sidebar-menu{
+      >li{
+        a{
+          .fa{
+            width: 20px;
+          }
+        }
+        .header{
+        }
+      }
+      color: #4b646f;
+      background: #1a2226;
+    }
+    .sidebar{
+      .treeview-menu{
+        margin: 0 1px;
+        background: #2c3b41;
+        >li>a{
+          padding: 5px 5px 5px 15px;
+          display: block;
+          font-size: 14px;
+          .fa{
+            width: 20px;
+          }
+          &:hover{
+            color: #444;
+            background: #f7f7f7;
+          }
+        }
+      }
+      a{
+        color: #b8c7ce;
+      }
+    }
+  }
+}
+.tool-tip-preview{
+  position: relative;
+  .tooltip{
+    position: relative;
+  }
+}

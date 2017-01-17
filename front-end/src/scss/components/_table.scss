@@ -1,0 +1,127 @@
+/*
+ * Component: Table
+ * ----------------
+ */
+
+.table-outer{
+  overflow-x: scroll;
+}
+.table {
+  //Cells
+  border-radius: 5px 5px 0px 0px;
+  background: #ffffff;margin-bottom: 0px;
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        font-size: 14px;
+        padding: 12px 22px 12px 22px;
+      }
+      &:nth-child(even){
+        background-color: #fafafa;
+      }
+      > th{
+        background-color: #fafafa;
+      }
+    }
+  }
+  > thead{
+    > tr {
+      > th{
+        padding: 20px 22px 20px 22px ;
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+  }
+  //thead cells
+  > thead > tr > th {
+  }
+  //progress bars in tables
+  tr td .progress {
+    margin-top: 5px;
+  }
+
+  .icheckbox_minimal-blue{
+    margin-right: 5px;
+  }
+  .scroll-able{
+
+  }
+}
+.scroll-wraper{
+  overflow-x: scroll;
+  overflow-y: scroll;
+  .table{
+    width: inherit;
+    min-width: 100%;
+    margin-bottom: 0px;
+
+  }
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fafafa;
+    border: solid 1px #e0e0e0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #e0e0e0;
+  }
+}
+
+//Bordered Table
+.table-bordered {
+  border: 1px solid $box-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        //border: 1px solid $box-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.table.no-border {
+  &,
+  td,
+  th {
+    border: 0;
+  }
+}
+
+/* .text-center in tables */
+table.text-center {
+  &, td, th {
+    text-align: center;
+  }
+}
+
+.table.align {
+  th {
+    text-align: left;
+  }
+  td {
+    text-align: right;
+  }
+}
+.table.mailbox--table{
+  border-radius: 0px;
+  border: none;
+  border-bottom: solid 1px #e0e0e0;
+  margin: 0px;
+}

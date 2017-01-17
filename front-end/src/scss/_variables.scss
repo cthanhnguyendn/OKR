@@ -1,0 +1,173 @@
+//AdminLTE 2 Variables.less
+//=========================
+
+//PATHS
+//--------------------------------------------------------
+
+$boxed-layout-bg-image-path: "../img/boxed-bg.png";
+
+//COLORS
+//--------------------------------------------------------
+// OSS Colors //
+$oss-dark: #374355;
+$oss-bold: #3d4d65;
+$oss-gray: #54657e	;
+$oss-blue: #0082d5;
+$oss-red: #d2335c;
+$oss-purple: #A93ABA;
+$oss-orange: #ff9800;
+$oss-lightest: #eceff4;
+$oss-lighter:#cad3df;
+$oss-light: #8493a8;
+$oss-green: #4caf50;
+$oss-banana: #9dbf16;
+$oss-smoke: #f9f9f9;
+
+//
+//
+// ======================//
+//
+//Primary
+$light-blue: #3c8dbc;
+//Danger
+$red: #dd4b39;
+//Success
+$green: #00a65a;
+//Info
+$aqua: #00c0ef;
+//Warning
+$yellow: #f39c12;
+$blue: #0082d5;
+$navy: #001F3F;
+$teal: #39CCCC;
+$olive: #3D9970;
+$lime: #01FF70;
+$orange: #FF851B;
+$fuchsia: #F012BE;
+$purple: #605ca8;
+$maroon: #D81B60;
+$black: #111;
+$gray: #d2d6de;
+// =======old===========//
+
+//LAYOUT
+//--------------------------------------------------------
+// Wrapper
+// If error page - padding top
+$padding-top-error-page: 85px;
+// Searchbox header width
+$searchbox-header-width:556px;
+//Side bar and logo width
+//Side bar and logo width
+$sidebar-width: 240px;
+$sidebar-close-width: 55px;
+$sidebar-active-left-border: 5px;
+$sidebar-close-width-menu-icon: $sidebar-close-width - 5px;
+//Boxed layout maximum width
+$boxed-layout-max-width: 1024px;
+//When the logo should go to the top of the screen
+$screen-header-collapse: $screen-xs-max;
+
+//Link colors (Aka: <a> tags)
+$link-color: $oss-blue;
+$link-hover-color: lighten($link-color, 2%);
+
+//Body background (Affects main content background only)
+$body-bg: #eef2f4;
+$body-text-color: $oss-gray;
+$body-icon-color: $oss-light;
+//SIDEBAR SKINS
+//--------------------------------------------------------
+
+//Dark sidebar
+$sidebar-dark-bg: #222d32;
+$sidebar-dark-hover-bg: darken($sidebar-dark-bg, 2%);
+$sidebar-dark-color: lighten($sidebar-dark-bg, 60%);
+$sidebar-dark-hover-color: #fff;
+$sidebar-dark-submenu-bg: lighten($sidebar-dark-bg, 5%);
+$sidebar-dark-submenu-color: lighten($sidebar-dark-submenu-bg, 40%);
+$sidebar-dark-submenu-hover-color: #fff;
+
+//Light sidebar
+$sidebar-light-bg: #f9fafc;
+$sidebar-light-hover-bg: lighten(#f0f0f1, 1.5%);
+$sidebar-light-color: #444;
+$sidebar-light-hover-color: #000;
+$sidebar-light-submenu-bg: $sidebar-light-hover-bg;
+$sidebar-light-submenu-color: #777;
+$sidebar-light-submenu-hover-color: #000;
+
+// OSS Light sidebar
+$sidebar-oss-light-bg:#eef2f4;
+$sidebar-oss-light-hover-bg: #eef2f4;
+$sidebar-oss-light-color: #3d4d65;
+$sidebar-oss-light-hover-color: lighten($sidebar-oss-light-color, 5%);
+$sidebar-oss-light-submenu-bg: $sidebar-oss-light-bg;
+$sidebar-oss-light-submenu-color: #54657e;
+$sidebar-oss-light-submenu-hover-color: #fff;
+
+//CONTROL SIDEBAR
+//--------------------------------------------------------
+$control-sidebar-width: $sidebar-width;
+
+//BOXES
+//--------------------------------------------------------
+$box-border-color: $oss-lightest;
+$box-border-radius: 3px;
+$box-footer-bg: #f6f6f6;
+$box-boxshadow: 0 1px 1px rgba(0, 0, 0, .1);
+$box-padding: 10px;
+
+//Box variants
+$box-default-border-top-color: #d2d6de;
+
+//BUTTONS
+//--------------------------------------------------------
+$btn-boxshadow: none;
+
+//PROGRESS BARS
+//--------------------------------------------------------
+$progress-bar-border-radius: 10px;
+$progress-bar-sm-border-radius: 10px;
+$progress-bar-xs-border-radius: 10px;
+
+//FORMS
+//--------------------------------------------------------
+$input-radius: 0;
+
+//BUTTONS
+//--------------------------------------------------------
+
+//Border radius for non flat buttons
+$btn-border-radius: 3px;
+$btn-default-border-color:#cad3df;
+//DIRECT CHAT
+//--------------------------------------------------------
+$direct-chat-height: 250px;
+$direct-chat-default-msg-bg: $gray;
+$direct-chat-default-font-color: #444;
+$direct-chat-default-msg-border-color: $gray;
+
+//CHAT WIDGET
+//--------------------------------------------------------
+$attachment-border-radius: 3px;
+
+//TRANSITIONS SETTINGS
+//--------------------------------------------------------
+
+//Transition global options
+$transition-speed: .15s;
+$transition-fn: ease-in-out;
+//cubic-bezier(0.32,1.25,0.375,1.15);
+
+//Newsfeed Post
+$newsfeed-post-border-color: #cad3df;
+$newsfeed-post-border-radius: 3px;
+$newsfeed-post-footer-bg: #eceff4;
+$newsfeed-post-boxshadow: 0 1px 1px rgba(0, 0, 0, .1);
+$newsfeed-post-padding: 10px;
+// Popover width
+$max-width-popover:500px;
+$width-popover:350px;
+
+

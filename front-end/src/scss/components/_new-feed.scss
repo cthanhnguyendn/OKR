@@ -1,0 +1,156 @@
+.new-feed {
+  @extend .box;
+  .nav.nav-tabs {
+    border: none;
+    padding: 0px 14px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    border-radius: 0px;
+    > li {
+      margin-right: 10px;
+      > a {
+        padding: 7px 3px 8px 2px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        border-bottom-width: 0px;
+        i {
+          margin-right: 3px;
+        }
+      }
+    }
+    > li.active a, li a:hover {
+      border-bottom-width: 3px;
+      padding: 8px 3px 6px 3px;
+    }
+    > li.tab-send {
+      a {
+        border-bottom-color: #00bcd4;
+        i {
+          color: #00bcd4;
+        }
+      }
+
+    }
+    > li.tab-edit {
+      a {
+        border-bottom-color: #ffc107;
+        i {
+          color: #ffc107;
+        }
+      }
+    }
+    > li.tab-event {
+      a {
+        border-bottom-color: #8bc34a;
+        i {
+          color: #8bc34a;
+        }
+      }
+    }
+    > li.tab-notifed {
+      a {
+        border-bottom-color: #e91e63;
+        i {
+          color: #e91e63;
+        }
+      }
+    }
+  }
+  .new-feed-body {
+    @extend .box-body;
+    #newfeed-tab-mail {
+      .tab-content {
+        -webkit-transition: height 0.5s; /* Safari */
+        transition: height 0.5s;
+      }
+    }
+  }
+  .new-feed-content {
+    position: relative;
+    @include clearfix();
+    .new-feed-user {
+      display: inline;
+      border-radius: 30px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .content-textarea {
+      display: inline;
+      width: 100%;
+      height: 180px;
+      border: none;
+      padding-left: 60px;
+    }
+    .content-textarea.mini-visible {
+      display: none;
+    }
+  }
+  .control {
+    @include clearfix();
+    .toolbar {
+      ul.control__editor {
+        padding-left: 0px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  #newfeed-tab-mail.mini {
+    .mini-hide {
+      display: none;
+    }
+    .mini-visible {
+      display: block;
+    }
+    .new-feed-content {
+      .content-textarea {
+        height: 40px;
+      }
+    }
+  }
+}
+
+.announce {
+  .c-create-body__attach {
+    .c-list-attach--files--announce {
+      table.table {
+        tbody {
+          tr {
+            td {
+              border-top: 0px;
+              padding: 11px;
+              border-bottom: 1px solid #d8d8d8;
+            }
+            td.file-info {
+              text-align: right;
+              width: 150px;
+            }
+            &:nth-child(even) {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  .c-newsfeed-post {
+    .c-newsfeed-post__footer {
+      background: transparent;
+    }
+  }
+  .info-block {
+    padding-top: 10px;
+  }
+}
+
+.mini iframe {
+  body{
+    display: none;
+  }
+}
